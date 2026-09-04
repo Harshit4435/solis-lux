@@ -12,6 +12,7 @@ import {
 import { Button } from '../components/common/Button';
 import { Card } from '../components/common/Card';
 import { Reveal } from '../components/common/Reveal';
+import { VittorisIcon } from '../components/common/VittorisLogo';
 import { TelemetryStats } from '../components/solar/TelemetryStats';
 import { SolarCalculator } from '../components/solar/SolarCalculator';
 import { projectsData } from '../data/projectsData';
@@ -52,10 +53,10 @@ export const Home: React.FC<HomeProps> = ({ onOpenConsultation }) => {
         {/* Hero Content */}
         <div className="relative z-20 max-w-7xl mx-auto px-6 w-full text-center flex flex-col items-center py-24">
           <Reveal direction="down" delay={0.2}>
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#D4AF37]/30 bg-[#D4AF37]/10 mb-8 backdrop-blur-md">
-              <span className="w-2 h-2 rounded-full bg-[#D4AF37] animate-pulse" />
-              <span className="text-xs tracking-[0.35em] uppercase text-[#D4AF37] font-semibold">
-                Pioneering Clean Energy Architecture
+            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-[#A855F7]/30 bg-[#3B0764]/30 mb-8 backdrop-blur-md shadow-[0_0_20px_rgba(168,85,247,0.15)]">
+              <VittorisIcon size={18} />
+              <span className="text-xs tracking-[0.35em] uppercase text-[#C084FC] font-semibold">
+                AI VITTORIS • CLEAN ENERGY PLATFORM
               </span>
             </div>
           </Reveal>
@@ -156,7 +157,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenConsultation }) => {
 
             <Reveal direction="up" delay={0.3}>
               <p className="text-sm md:text-base leading-relaxed font-light mb-6" style={{ color: 'var(--text-muted)' }}>
-                Traditional solar installations often sacrifice structural beauty for utility. Solis Lux bridges this divide by providing high-visibility showcases of cutting-edge photovoltaic estates, BIPV architectural glass, and industrial microgrids.
+                Traditional solar installations often sacrifice structural beauty for utility. Vittoris bridges this divide by providing high-visibility showcases of cutting-edge photovoltaic estates, BIPV architectural glass, and industrial microgrids.
               </p>
             </Reveal>
 
@@ -382,7 +383,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenConsultation }) => {
             </Reveal>
             <Reveal direction="up" delay={0.2}>
               <h2 className="text-3xl md:text-5xl font-serif text-white font-normal mb-4">
-                Four Pillars of Solis Standards.
+                Four Pillars of Vittoris Standards.
               </h2>
             </Reveal>
             <Reveal direction="up" delay={0.3}>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Sun, Moon, Menu, X, Calendar } from 'lucide-react';
 import { Button } from '../common/Button';
+import { VittorisLogo } from '../common/VittorisLogo';
 
 interface NavbarProps {
   onOpenConsultation: () => void;
@@ -45,18 +46,8 @@ export const Navbar: React.FC<NavbarProps> = ({
       >
         <div className="max-w-8xl mx-auto px-6 lg:px-16 flex items-center justify-between">
           {/* Brand Logo */}
-          <Link to="/" className="flex items-center gap-3 group select-none">
-            <div className="w-10 h-10 rounded-full border border-[#D4AF37]/50 flex items-center justify-center bg-[#D4AF37]/10 group-hover:border-[#D4AF37] group-hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-all duration-300">
-              <Sun size={20} className="text-[#D4AF37] group-hover:rotate-45 transition-transform duration-500" />
-            </div>
-            <div>
-              <div className="text-lg md:text-xl font-serif font-bold tracking-[0.25em] text-white group-hover:text-[#D4AF37] transition-colors">
-                SOLIS<span className="text-[#D4AF37] font-light">LUX</span>
-              </div>
-              <div className="text-[8px] tracking-[0.35em] uppercase text-white/50 font-medium -mt-0.5">
-                Renewable Estates & EPC
-              </div>
-            </div>
+          <Link to="/" className="flex items-center group select-none">
+            <VittorisLogo size="md" subtitleText="Solar Estates & EPC" />
           </Link>
 
           {/* Desktop Navigation Links */}

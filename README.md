@@ -1,13 +1,13 @@
-# SOLIS LUX — Architectural Solar & Clean Energy Platform
+# VITTORIS — Architectural Solar & Clean Energy Platform
 
 > **Where Visionary Property Owners & Solar Innovators Converge.**  
-> A luxury architectural solar panel visibility exchange and stakeholder matchmaking platform, inspired by the high-end editorial aesthetics and motion design of [Prapti Buildcon](https://prapti-swart.vercel.app).
+> A luxury architectural solar visibility exchange and stakeholder matchmaking platform featuring official **Vittoris** branding, inspired by high-end editorial aesthetics and motion design.
 
 ---
 
 ## 🌟 Overview & Purpose
 
-**Solis Lux** serves as a premier showcase and visibility platform where:
+**Vittoris** serves as a premier showcase and visibility platform where:
 - **Property Owners** (Luxury Estates, Commercial Headquarters, Industrial Campuses, and Agricultural Farmland) can discover bespoke architectural solar installations, BIPV solar glass, and battery microgrids.
 - **Solar Asset Owners & Certified EPC Developers** can showcase verified commissioned capacity, technical specifications, and offer direct consultations.
 - **Direct Matchmaking**: Users and solar plant owners can connect directly to schedule **Virtual Consultations**, **On-Site Solar Feasibility Audits**, and **Owner-Host Co-Development Partnerships** without intermediaries.

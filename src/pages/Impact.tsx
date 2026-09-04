@@ -67,7 +67,7 @@ export const Impact: React.FC<ImpactProps> = ({ onOpenConsultation }) => {
               </div>
               <h3 className="text-2xl font-serif text-white mb-3">Circular Lifecycle Integrity</h3>
               <p className="text-xs font-light leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-                All Tier-1 modules featured across Solis Lux assets are registered with global PV Cycle reclamation directives. Over 95% of silicon, aluminium framing, and tempered glass are reclaimed and remanufactured at end-of-life.
+                All Tier-1 modules featured across Vittoris assets are registered with global PV Cycle reclamation directives. Over 95% of silicon, aluminium framing, and tempered glass are reclaimed and remanufactured at end-of-life.
               </p>
             </Card>
           </Reveal>
@@ -79,7 +79,7 @@ export const Impact: React.FC<ImpactProps> = ({ onOpenConsultation }) => {
               </div>
               <h3 className="text-2xl font-serif text-white mb-3">Zero-Water Robotic Array Care</h3>
               <p className="text-xs font-light leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-                Standard commercial solar arrays consume thousands of gallons of freshwater for dust removal. Solis Lux developments mandate autonomous dry microfiber robotics, preserving pristine groundwater reserves.
+                Standard commercial solar arrays consume thousands of gallons of freshwater for dust removal. Vittoris developments mandate autonomous dry microfiber robotics, preserving pristine groundwater reserves.
               </p>
             </Card>
           </Reveal>

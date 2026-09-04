@@ -28,7 +28,7 @@ export const Contact: React.FC<ContactProps> = ({ onOpenConsultation }) => {
     <div className="min-h-screen pb-32">
       <PageHeader
         badge="DIRECT ENGAGEMENT"
-        subtitle="SOLIS LUX ADVISORY DESK"
+        subtitle="VITTORIS ADVISORY DESK"
         title="Schedule a Private Solar Consultation."
         description="Whether you are an estate proprietor evaluating rooftop solarization, a commercial landlord offering rooftop leaseholds, or an accredited solar developer seeking asset visibility."
       />
@@ -38,13 +38,12 @@ export const Contact: React.FC<ContactProps> = ({ onOpenConsultation }) => {
         <div className="mb-12 p-6 rounded-xl border border-[#D4AF37]/30 bg-[#D4AF37]/5 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3 text-xs">
             <Calendar size={20} className="text-[#D4AF37] shrink-0" />
-            <div>
-              <span className="font-semibold text-white block">Prefer Instant Calendar Synchronization?</span>
-              <span style={{ color: 'var(--text-muted)' }}>Skip the contact form and lock in an on-site or virtual appointment directly.</span>
-            </div>
+            <span className="text-white/80">
+              Need immediate technical matchmaking with a regional solar plant operator?
+            </span>
           </div>
-          <Button variant="gold" size="sm" onClick={onOpenConsultation} icon={<Calendar size={13} />}>
-            Open Matchmaking Scheduler
+          <Button variant="gold" size="sm" onClick={() => onOpenConsultation()}>
+            Book 1-on-1 Session
           </Button>
         </div>
 
@@ -56,10 +55,10 @@ export const Contact: React.FC<ContactProps> = ({ onOpenConsultation }) => {
                 EXECUTIVE HEADQUARTERS
               </div>
               <h2 className="text-2xl md:text-3xl font-serif text-white mb-4">
-                We Welcome In-Person & Virtual Consultations.
+                Let Us Evaluate Your Solar Potential.
               </h2>
-              <p className="text-xs leading-relaxed font-light mb-8" style={{ color: 'var(--text-muted)' }}>
-                Our architectural engineering team operates from regional headquarters in Pune with international advisory satellite desks in Zurich and Singapore.
+              <p className="text-xs md:text-sm font-light leading-relaxed" style={{ color: 'var(--text-muted)' }}>
+                Directly communicate with licensed solar engineers and asset managers. We honor strict mutual non-disclosure agreements for all architectural estate audits.
               </p>
             </Reveal>
 
@@ -70,10 +69,9 @@ export const Contact: React.FC<ContactProps> = ({ onOpenConsultation }) => {
                     <MapPin size={18} />
                   </div>
                   <div>
-                    <h4 className="text-sm font-serif text-white mb-1">Western India Engineering Hub</h4>
-                    <p style={{ color: 'var(--text-muted)' }}>
-                      Level 14, Helios Energy Tower, Senapati Bapat Road, Pune, Maharashtra 411016
-                    </p>
+                    <h4 className="text-sm font-serif text-white mb-1">Corporate HQ & Engineering Lab</h4>
+                    <p style={{ color: 'var(--text-muted)' }}>Helios Tower, Senapati Bapat Road</p>
+                    <p style={{ color: 'var(--text-muted)' }}>Pune, Maharashtra 411016, India</p>
                   </div>
                 </div>
               </Card>
@@ -85,8 +83,8 @@ export const Contact: React.FC<ContactProps> = ({ onOpenConsultation }) => {
                   </div>
                   <div>
                     <h4 className="text-sm font-serif text-white mb-1">Direct Advisory Line</h4>
-                    <p style={{ color: 'var(--text-muted)' }}>+91 (020) 8840 2200 / +91 (020) 7712 9900</p>
-                    <p className="text-[11px] text-white/40 mt-1">Monday – Saturday: 09:00 AM – 07:00 PM IST</p>
+                    <p style={{ color: 'var(--text-muted)' }}>+91 (020) 8840 2200</p>
+                    <p className="text-[11px] text-[#D4AF37]">Mon – Sat: 09:00 – 19:00 IST</p>
                   </div>
                 </div>
               </Card>
@@ -98,8 +96,8 @@ export const Contact: React.FC<ContactProps> = ({ onOpenConsultation }) => {
                   </div>
                   <div>
                     <h4 className="text-sm font-serif text-white mb-1">Electronic Correspondence</h4>
-                    <p style={{ color: 'var(--text-muted)' }}>advisory@solislux.energy</p>
-                    <p style={{ color: 'var(--text-muted)' }}>owners.registry@solislux.energy</p>
+                    <p style={{ color: 'var(--text-muted)' }}>advisory@vittoris.energy</p>
+                    <p style={{ color: 'var(--text-muted)' }}>owners.registry@vittoris.energy</p>
                   </div>
                 </div>
               </Card>
@@ -228,7 +226,7 @@ export const Contact: React.FC<ContactProps> = ({ onOpenConsultation }) => {
               FREQUENTLY ADDRESSED
             </span>
             <h3 className="text-2xl md:text-3xl font-serif text-white">
-              Understanding the Solis Lux Visibility Model.
+              Understanding the Vittoris Visibility Model.
             </h3>
           </div>
 
@@ -236,11 +234,11 @@ export const Contact: React.FC<ContactProps> = ({ onOpenConsultation }) => {
             {[
               {
                 q: 'How does user-owner direct matchmaking work?',
-                a: 'Unlike generic aggregate portals, Solis Lux directly connects verified property owners with accredited solar asset owners and principal EPC license holders. Inquiries trigger direct calendar synchronization for on-site audits or virtual technical briefings.'
+                a: 'Unlike generic aggregate portals, Vittoris directly connects verified property owners with accredited solar asset owners and principal EPC license holders. Inquiries trigger direct calendar synchronization for on-site audits or virtual technical briefings.'
               },
               {
                 q: 'What is the role of this platform if it is only for visibility?',
-                a: 'Solis Lux serves as a dedicated architectural showroom and credibility index. We showcase real commissioned projects, verified production data, and engineering specs so property seekers can evaluate genuine workmanship without sales middlemen.'
+                a: 'Vittoris serves as a dedicated architectural showroom and credibility index. We showcase real commissioned projects, verified production data, and engineering specs so property seekers can evaluate genuine workmanship without sales middlemen.'
               },
               {
                 q: 'How are solar plant owners and developers verified?',

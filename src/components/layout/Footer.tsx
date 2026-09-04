@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Sun, Mail, Phone, MapPin, ArrowUpRight } from 'lucide-react';
+import { Mail, Phone, MapPin, ArrowUpRight } from 'lucide-react';
 import { Button } from '../common/Button';
+import { VittorisLogo } from '../common/VittorisLogo';
 
 interface FooterProps {
   onOpenConsultation: () => void;
@@ -46,13 +47,8 @@ export const Footer: React.FC<FooterProps> = ({ onOpenConsultation }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 pb-16 border-b" style={{ borderColor: 'var(--border-divider)' }}>
           {/* Brand Col */}
           <div className="lg:col-span-2 space-y-4">
-            <Link to="/" className="flex items-center gap-3 select-none">
-              <div className="w-9 h-9 rounded-full border border-[#D4AF37]/50 flex items-center justify-center bg-[#D4AF37]/10 text-[#D4AF37]">
-                <Sun size={18} />
-              </div>
-              <span className="text-lg font-serif font-bold tracking-[0.25em] text-white">
-                SOLIS<span className="text-[#D4AF37] font-light">LUX</span>
-              </span>
+            <Link to="/" className="inline-block select-none">
+              <VittorisLogo size="lg" subtitleText="Solar Estates & EPC Platform" />
             </Link>
             <p className="text-xs leading-relaxed max-w-sm font-light" style={{ color: 'var(--text-muted)' }}>
               A curated architectural solar visibility exchange connecting high-net-worth estate owners, commercial landlords, and verified solar plant developers across Western India and global corridors.
@@ -151,7 +147,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenConsultation }) => {
               </div>
               <div className="flex items-center gap-2">
                 <Mail size={14} className="text-[#D4AF37] shrink-0" />
-                <span>advisory@solislux.energy</span>
+                <span>advisory@vittoris.energy</span>
               </div>
             </div>
           </div>
@@ -160,7 +156,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenConsultation }) => {
         {/* Bottom Sub-bar */}
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-[10px] tracking-wider" style={{ color: 'var(--text-muted)' }}>
           <div>
-            © {new Date().getFullYear()} SOLIS LUX ARCHITECTURAL ENERGY PLATFORM. ALL RIGHTS RESERVED.
+            © {new Date().getFullYear()} VITTORIS SOLAR & CLEAN ENERGY PLATFORM. ALL RIGHTS RESERVED.
           </div>
           <div className="flex items-center gap-6">
             <span>CEA Grid Compliant</span>

@@ -166,7 +166,7 @@ export const Owners: React.FC<OwnersProps> = ({ onOpenConsultation }) => {
               FOR SOLAR PLANT OPERATORS & ROOFTOP LANDLORDS
             </span>
             <h3 className="text-2xl md:text-4xl font-serif text-white mb-4">
-              List Your Solar Asset on Solis Lux
+              List Your Solar Asset on Vittoris
             </h3>
             <p className="text-xs md:text-sm font-light leading-relaxed mb-8" style={{ color: 'var(--text-muted)' }}>
               Increase visibility for your operational capacity, discover corporate off-takers under long-term PPAs, or offer your commercial rooftop to tier-1 solar EPC firms.
