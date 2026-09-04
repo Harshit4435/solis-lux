@@ -7,7 +7,8 @@ import {
   Leaf, 
   Cpu, 
   Calendar, 
-  MapPin
+  MapPin,
+  Mail
 } from 'lucide-react';
 import { Button } from '../components/common/Button';
 import { Card } from '../components/common/Card';
@@ -221,6 +222,48 @@ export const Home: React.FC<HomeProps> = ({ onOpenConsultation }) => {
             </Reveal>
           </div>
 
+          {/* Owner Detail Banner directly over the solar panels */}
+          <Reveal direction="up" delay={0.15}>
+            <div className="mb-10 p-5 md:p-6 rounded-2xl border bg-gradient-to-r from-black/80 via-[#1b082e]/40 to-black/80 backdrop-blur-md flex flex-col sm:flex-row items-center justify-between gap-5 shadow-xl" style={{ borderColor: 'var(--border-card)' }}>
+              <div className="flex items-center gap-4 text-center sm:text-left">
+                <div className="relative shrink-0">
+                  <div className="w-14 h-14 rounded-full p-0.5 bg-gradient-to-tr from-[#D4AF37] via-[#A855F7] to-[#D4AF37] shadow-[0_0_15px_rgba(212,175,55,0.3)]">
+                    <img
+                      src={ownersData[0].avatar}
+                      alt={ownersData[0].name}
+                      className="w-full h-full rounded-full object-cover"
+                    />
+                  </div>
+                  <div className="absolute -bottom-1 -right-1 bg-[#D4AF37] text-black p-0.5 rounded-full shadow">
+                    <ShieldCheck size={11} />
+                  </div>
+                </div>
+                <div>
+                  <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2">
+                    <span className="text-base font-serif text-white font-medium">{ownersData[0].name}</span>
+                    <span className="text-[10px] px-2 py-0.5 rounded bg-[#D4AF37]/15 text-[#D4AF37] border border-[#D4AF37]/30 font-semibold tracking-wider uppercase">
+                      Solar Asset Owner
+                    </span>
+                    <span className="text-[10px] text-white/50 font-mono">Founder • Vittoris</span>
+                  </div>
+                  <p className="text-xs text-white/70 font-light mt-0.5">
+                    Curating and advising on all photovoltaic technologies. Direct consultations without intermediaries.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4 text-xs shrink-0">
+                <a
+                  href={`mailto:${ownersData[0].email}`}
+                  className="text-[#D4AF37] hover:underline flex items-center gap-1.5 font-medium bg-[#D4AF37]/10 px-3.5 py-1.5 rounded-full border border-[#D4AF37]/30"
+                >
+                  <Mail size={12} />
+                  <span>{ownersData[0].email}</span>
+                </a>
+              </div>
+            </div>
+          </Reveal>
+
           {/* Solar Panel Types Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredProjects.map((project, idx) => (
@@ -239,6 +282,16 @@ export const Home: React.FC<HomeProps> = ({ onOpenConsultation }) => {
                     {/* Panel Type Badge */}
                     <div className="absolute top-4 left-4 bg-black/70 border border-white/15 backdrop-blur-md px-3 py-1 rounded text-[10px] tracking-widest text-[#D4AF37] uppercase font-semibold">
                       {project.type}
+                    </div>
+
+                    {/* Owner Overlay Badge Directly Over Image */}
+                    <div className="absolute top-4 right-4 bg-black/80 border border-white/20 backdrop-blur-md pl-1.5 pr-3 py-1 rounded-full flex items-center gap-1.5 z-10 shadow-lg">
+                      <img
+                        src={ownersData[0].avatar}
+                        alt={ownersData[0].name}
+                        className="w-5 h-5 rounded-full object-cover border border-[#D4AF37]"
+                      />
+                      <span className="text-[10px] text-white/90 font-medium">Owner: {ownersData[0].name}</span>
                     </div>
 
                     {/* Efficiency Badge */}
@@ -273,8 +326,32 @@ export const Home: React.FC<HomeProps> = ({ onOpenConsultation }) => {
                       </ul>
                     </div>
 
+                    {/* Owner Detail Box */}
+                    <div className="py-2.5 px-3 rounded-lg bg-black/40 border border-white/10 flex items-center justify-between mb-4">
+                      <div className="flex items-center gap-2.5">
+                        <img
+                          src={ownersData[0].avatar}
+                          alt={ownersData[0].name}
+                          className="w-7 h-7 rounded-full object-cover border border-[#D4AF37]"
+                        />
+                        <div className="text-left leading-tight">
+                          <span className="text-[9px] uppercase tracking-wider text-white/40 block">Asset Owner</span>
+                          <span className="text-xs text-white font-medium">{ownersData[0].name}</span>
+                          <span className="text-[10px] text-[#D4AF37] block font-mono">Founder • Vittoris</span>
+                        </div>
+                      </div>
+                      <a
+                        href={`mailto:${ownersData[0].email}`}
+                        className="text-[11px] text-[#D4AF37] hover:underline flex items-center gap-1 bg-[#D4AF37]/10 px-2 py-1 rounded border border-[#D4AF37]/20"
+                        title="Direct Founder Email"
+                      >
+                        <Mail size={11} />
+                        <span>Email</span>
+                      </a>
+                    </div>
+
                     {/* Footer meeting trigger */}
-                    <div className="pt-4 border-t border-white/10 flex items-center justify-between">
+                    <div className="pt-2 border-t border-white/10 flex items-center justify-between">
                       <Button
                         variant="gold"
                         size="sm"

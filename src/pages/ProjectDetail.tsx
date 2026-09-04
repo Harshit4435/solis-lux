@@ -46,6 +46,18 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ onOpenConsultation
             <span>Back to Solar Panels</span>
           </Link>
         </div>
+
+        {/* Owner Detail Badge Over Hero */}
+        <div className="absolute top-28 right-6 lg:right-16 z-20 flex items-center gap-2.5 py-2 px-4 rounded-full bg-black/50 border border-white/15 backdrop-blur-md">
+          <img
+            src={project.owner.avatar}
+            alt={project.owner.name}
+            className="w-6 h-6 rounded-full object-cover border border-[#D4AF37]"
+          />
+          <span className="text-xs text-white font-light">
+            Asset Owner: <strong className="text-[#D4AF37] font-medium">{project.owner.name}</strong> • {project.owner.company}
+          </span>
+        </div>
       </div>
 
       {/* 2. FLOATING STATS SUMMARY PANEL (Matching Prapti Buildcon -mt-20 card) */}
@@ -58,6 +70,16 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ onOpenConsultation
               borderColor: 'var(--border-card)'
             }}
           >
+            {/* Owner Pre-header */}
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-white/80 mb-4">
+              <img
+                src={project.owner.avatar}
+                alt={project.owner.name}
+                className="w-4 h-4 rounded-full object-cover border border-[#D4AF37]"
+              />
+              <span>Technology Curated & Owned by <strong className="text-[#D4AF37]">{project.owner.name}</strong> ({project.owner.role})</span>
+            </div>
+
             {/* Title & Top Action */}
             <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-8 border-b" style={{ borderColor: 'var(--border-divider)' }}>
               <div>
