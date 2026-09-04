@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, ArrowUpRight } from 'lucide-react';
+import { Mail, MapPin, ArrowUpRight } from 'lucide-react';
 import { Button } from '../common/Button';
 import { VittorisLogo } from '../common/VittorisLogo';
 
@@ -72,30 +72,30 @@ export const Footer: React.FC<FooterProps> = ({ onOpenConsultation }) => {
           {/* Quick Links */}
           <div>
             <h4 className="text-[11px] tracking-[0.25em] uppercase font-semibold text-white mb-4">
-              Explore Portfolio
+              Solar Panel Types
             </h4>
             <ul className="space-y-2.5 text-xs" style={{ color: 'var(--text-muted)' }}>
               <li>
                 <Link to="/projects" className="hover:text-[#D4AF37] transition-colors flex items-center justify-between">
-                  <span>Residential Estates</span>
+                  <span>Monocrystalline TOPCon</span>
                   <ArrowUpRight size={12} className="opacity-40" />
                 </Link>
               </li>
               <li>
                 <Link to="/projects" className="hover:text-[#D4AF37] transition-colors flex items-center justify-between">
-                  <span>Commercial Microgrids</span>
+                  <span>Architectural BIPV Glass</span>
                   <ArrowUpRight size={12} className="opacity-40" />
                 </Link>
               </li>
               <li>
                 <Link to="/projects" className="hover:text-[#D4AF37] transition-colors flex items-center justify-between">
-                  <span>BIPV Architectural Glass</span>
+                  <span>Bifacial Dual-Glass</span>
                   <ArrowUpRight size={12} className="opacity-40" />
                 </Link>
               </li>
               <li>
                 <Link to="/projects" className="hover:text-[#D4AF37] transition-colors flex items-center justify-between">
-                  <span>Agri-PV Solar Farmland</span>
+                  <span>Commercial Rooftop PV</span>
                   <ArrowUpRight size={12} className="opacity-40" />
                 </Link>
               </li>
@@ -105,27 +105,22 @@ export const Footer: React.FC<FooterProps> = ({ onOpenConsultation }) => {
           {/* Owners & Governance */}
           <div>
             <h4 className="text-[11px] tracking-[0.25em] uppercase font-semibold text-white mb-4">
-              Owner Network
+              Owner Desk
             </h4>
             <ul className="space-y-2.5 text-xs" style={{ color: 'var(--text-muted)' }}>
               <li>
                 <Link to="/owners" className="hover:text-[#D4AF37] transition-colors">
-                  Verified Solar Owners Directory
-                </Link>
-              </li>
-              <li>
-                <Link to="/impact" className="hover:text-[#D4AF37] transition-colors">
-                  Clean Telemetry & Carbon Credits
+                  Project Owner & Founder
                 </Link>
               </li>
               <li>
                 <button onClick={onOpenConsultation} className="hover:text-[#D4AF37] transition-colors text-left">
-                  Request Solar Site Audit
+                  Book 1-on-1 Consultation
                 </button>
               </li>
               <li>
                 <Link to="/contact" className="hover:text-[#D4AF37] transition-colors">
-                  Host Leasing Opportunities
+                  Direct Inquiries & Pricing
                 </Link>
               </li>
             </ul>
@@ -134,16 +129,12 @@ export const Footer: React.FC<FooterProps> = ({ onOpenConsultation }) => {
           {/* Direct Headquarters */}
           <div>
             <h4 className="text-[11px] tracking-[0.25em] uppercase font-semibold text-white mb-4">
-              Regional Desks
+              Direct Contact
             </h4>
             <div className="space-y-3 text-xs" style={{ color: 'var(--text-muted)' }}>
               <div className="flex items-start gap-2">
                 <MapPin size={14} className="text-[#D4AF37] shrink-0 mt-0.5" />
-                <span>Helios Tower, Senapati Bapat Road, Pune, Maharashtra 411016</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Phone size={14} className="text-[#D4AF37] shrink-0" />
-                <span>+91 (020) 8840 2200</span>
+                <span>Vittoris • Available: Remote</span>
               </div>
               <div className="flex items-center gap-2">
                 <Mail size={14} className="text-[#D4AF37] shrink-0" />

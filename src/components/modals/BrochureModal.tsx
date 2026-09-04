@@ -132,12 +132,11 @@ export const BrochureModal: React.FC<BrochureModalProps> = ({
 
                   <div>
                     <label className="block text-[10px] tracking-[0.2em] uppercase mb-1 font-semibold" style={{ color: 'var(--text-muted)' }}>
-                      Phone / Mobile *
+                      Contact Number (Optional)
                     </label>
                     <input
-                      required
                       type="tel"
-                      placeholder="+91 98765 43210"
+                      placeholder="e.g. Your phone or WhatsApp"
                       value={phone}
                       onChange={e => setPhone(e.target.value)}
                       className="w-full px-4 py-3 rounded-md bg-white/5 border border-white/10 text-white text-xs focus:outline-none focus:border-[#D4AF37]"

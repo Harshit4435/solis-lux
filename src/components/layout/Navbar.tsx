@@ -29,9 +29,8 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   const navLinks = [
     { name: 'Home', path: '/' },
-    { name: 'Solar Projects', path: '/projects' },
+    { name: 'Solar Panels', path: '/projects' },
     { name: 'Project Owner', path: '/owners' },
-    { name: 'Clean Impact', path: '/impact' },
     { name: 'Contact Desk', path: '/contact' }
   ];
 

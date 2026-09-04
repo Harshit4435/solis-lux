@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, CheckCircle2, Send, Calendar } from 'lucide-react';
+import { Mail, MapPin, CheckCircle2, Send, Calendar, ShieldCheck } from 'lucide-react';
 import { PageHeader } from '../components/common/PageHeader';
 import { Card } from '../components/common/Card';
 import { Button } from '../components/common/Button';
@@ -30,7 +30,7 @@ export const Contact: React.FC<ContactProps> = ({ onOpenConsultation }) => {
         badge="DIRECT ENGAGEMENT"
         subtitle="AI VITTORIS ADVISORY DESK"
         title="Schedule a Private Solar Consultation."
-        description="Whether you are an estate proprietor evaluating rooftop solarization, a commercial landlord offering rooftop leaseholds, or an accredited solar developer seeking asset visibility."
+        description="Connect directly with Udayveer Singh, Founder at Vittoris. Whether you are an estate proprietor evaluating solar panel types or a commercial host seeking direct clean power matchmaking."
       />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-16 pt-12">
@@ -39,7 +39,7 @@ export const Contact: React.FC<ContactProps> = ({ onOpenConsultation }) => {
           <div className="flex items-center gap-3 text-xs">
             <Calendar size={20} className="text-[#D4AF37] shrink-0" />
             <span className="text-white/80">
-              Need immediate technical matchmaking with a regional solar plant operator?
+              Need direct technical matchmaking with the solar asset owner?
             </span>
           </div>
           <Button variant="gold" size="sm" onClick={() => onOpenConsultation()}>
@@ -52,13 +52,13 @@ export const Contact: React.FC<ContactProps> = ({ onOpenConsultation }) => {
           <div className="lg:col-span-5 space-y-8">
             <Reveal direction="up" delay={0.1}>
               <div className="text-xs tracking-[0.25em] text-[#D4AF37] uppercase font-semibold mb-2">
-                EXECUTIVE HEADQUARTERS
+                FOUNDER & ADVISORY DESK
               </div>
               <h2 className="text-2xl md:text-3xl font-serif text-white mb-4">
                 Let Us Evaluate Your Solar Potential.
               </h2>
               <p className="text-xs md:text-sm font-light leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-                Directly communicate with licensed solar engineers and asset managers. We honor strict mutual non-disclosure agreements for all architectural estate audits.
+                Directly communicate with Udayveer Singh, Founder at Vittoris. We honor strict mutual non-disclosure agreements for all solar panel evaluations and commercial rooftop leaseholds.
               </p>
             </Reveal>
 
@@ -69,22 +69,9 @@ export const Contact: React.FC<ContactProps> = ({ onOpenConsultation }) => {
                     <MapPin size={18} />
                   </div>
                   <div>
-                    <h4 className="text-sm font-serif text-white mb-1">Corporate HQ & Engineering Lab</h4>
-                    <p style={{ color: 'var(--text-muted)' }}>Helios Tower, Senapati Bapat Road</p>
-                    <p style={{ color: 'var(--text-muted)' }}>Pune, Maharashtra 411016, India</p>
-                  </div>
-                </div>
-              </Card>
-
-              <Card className="p-6">
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-[#D4AF37]/10 text-[#D4AF37] flex items-center justify-center shrink-0">
-                    <Phone size={18} />
-                  </div>
-                  <div>
-                    <h4 className="text-sm font-serif text-white mb-1">Direct Advisory Line</h4>
-                    <p style={{ color: 'var(--text-muted)' }}>+91 (020) 8840 2200</p>
-                    <p className="text-[11px] text-[#D4AF37]">Mon – Sat: 09:00 – 19:00 IST</p>
+                    <h4 className="text-sm font-serif text-white mb-1">Founder Desk</h4>
+                    <p style={{ color: 'var(--text-muted)' }}>Udayveer Singh • Founder | Vittoris</p>
+                    <p className="text-[11px] text-[#D4AF37] mt-0.5">Available: Remote • Global Matchmaking</p>
                   </div>
                 </div>
               </Card>
@@ -96,8 +83,21 @@ export const Contact: React.FC<ContactProps> = ({ onOpenConsultation }) => {
                   </div>
                   <div>
                     <h4 className="text-sm font-serif text-white mb-1">Electronic Correspondence</h4>
-                    <p style={{ color: 'var(--text-muted)' }}>udayveer@vittoris.in</p>
-                    <p style={{ color: 'var(--text-muted)' }}>contact@vittoris.in</p>
+                    <a href="mailto:udayveer@vittoris.in" className="block text-white hover:text-[#D4AF37] transition-colors">udayveer@vittoris.in</a>
+                    <a href="mailto:contact@vittoris.in" className="block text-white/80 hover:text-[#D4AF37] transition-colors mt-0.5">contact@vittoris.in</a>
+                  </div>
+                </div>
+              </Card>
+
+              <Card className="p-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-full bg-[#10B981]/10 text-[#10B981] flex items-center justify-center shrink-0">
+                    <ShieldCheck size={18} />
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-serif text-white mb-1">Pricing & Feasibility</h4>
+                    <p style={{ color: 'var(--text-muted)' }}>Contact for pricing and site evaluation</p>
+                    <p className="text-[11px] text-white/40 mt-0.5">Direct Owner Engagement • Zero Middlemen</p>
                   </div>
                 </div>
               </Card>
@@ -162,12 +162,11 @@ export const Contact: React.FC<ContactProps> = ({ onOpenConsultation }) => {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-[11px] tracking-wider uppercase font-semibold mb-1.5" style={{ color: 'var(--text-muted)' }}>
-                        Phone / WhatsApp *
+                        Contact Number (Optional)
                       </label>
                       <input
-                        required
                         type="tel"
-                        placeholder="+91 98765 43210"
+                        placeholder="e.g. Your direct number"
                         value={formData.phone}
                         onChange={e => setFormData({ ...formData, phone: e.target.value })}
                         className="w-full px-4 py-3 rounded-md bg-white/5 border border-white/10 text-white text-xs focus:outline-none focus:border-[#D4AF37]"

@@ -7,7 +7,6 @@ import {
   Leaf, 
   Cpu, 
   Calendar, 
-  ChevronRight,
   MapPin
 } from 'lucide-react';
 import { Button } from '../components/common/Button';
@@ -29,11 +28,12 @@ export const Home: React.FC<HomeProps> = ({ onOpenConsultation }) => {
 
   const filteredProjects = projectsData.filter(project => {
     if (filterCategory === 'All') return true;
-    if (filterCategory === 'Residential') return project.type === 'Residential Estate';
-    if (filterCategory === 'Commercial') return project.type === 'Commercial Microgrid';
-    if (filterCategory === 'BIPV') return project.type === 'Architectural BIPV';
-    if (filterCategory === 'Agri-PV') return project.type === 'Agri-PV Farm';
-    return project.status === filterCategory;
+    if (filterCategory === 'Monocrystalline') return project.type.includes('Monocrystalline');
+    if (filterCategory === 'BIPV Glass') return project.type.includes('BIPV');
+    if (filterCategory === 'Bifacial') return project.type.includes('Bifacial');
+    if (filterCategory === 'Commercial') return project.type.includes('Commercial');
+    if (filterCategory === 'Roof Shingles') return project.type.includes('Shingles');
+    return true;
   });
 
   return (
@@ -191,12 +191,12 @@ export const Home: React.FC<HomeProps> = ({ onOpenConsultation }) => {
             <div>
               <Reveal direction="up" delay={0.1}>
                 <div className="text-xs tracking-[0.3em] uppercase text-[#D4AF37] mb-3 font-semibold">
-                  CURATED PORTFOLIO
+                  PHOTO SHOWCASE & SPECIFICATIONS
                 </div>
               </Reveal>
               <Reveal direction="up" delay={0.2}>
                 <h2 className="text-3xl md:text-5xl font-serif font-normal text-white">
-                  Flagship Solar Installations.
+                  Types of Solar Panels.
                 </h2>
               </Reveal>
             </div>
@@ -204,7 +204,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenConsultation }) => {
             {/* Filter Tabs */}
             <Reveal direction="up" delay={0.3}>
               <div className="flex flex-wrap gap-2 border-b pb-3" style={{ borderColor: 'var(--border-divider)' }}>
-                {['All', 'Residential', 'Commercial', 'BIPV', 'Agri-PV'].map(tab => (
+                {['All', 'Monocrystalline', 'BIPV Glass', 'Bifacial', 'Commercial', 'Roof Shingles'].map(tab => (
                   <button
                     key={tab}
                     onClick={() => setFilterCategory(tab)}
@@ -221,9 +221,9 @@ export const Home: React.FC<HomeProps> = ({ onOpenConsultation }) => {
             </Reveal>
           </div>
 
-          {/* Projects Grid */}
+          {/* Solar Panel Types Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredProjects.slice(0, 6).map((project, idx) => (
+            {filteredProjects.map((project, idx) => (
               <Reveal key={project.id} direction="up" delay={0.1 * idx}>
                 <Card className="group flex flex-col h-full">
                   {/* Visual Image container */}
@@ -236,43 +236,54 @@ export const Home: React.FC<HomeProps> = ({ onOpenConsultation }) => {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
                     
-                    {/* Status Badge */}
-                    <div className="absolute top-4 right-4 bg-black/70 border border-white/15 backdrop-blur-md px-3 py-1 rounded text-[10px] tracking-widest text-[#D4AF37] uppercase font-semibold">
-                      {project.status}
+                    {/* Panel Type Badge */}
+                    <div className="absolute top-4 left-4 bg-black/70 border border-white/15 backdrop-blur-md px-3 py-1 rounded text-[10px] tracking-widest text-[#D4AF37] uppercase font-semibold">
+                      {project.type}
                     </div>
 
-                    {/* Capacity Badge */}
-                    <div className="absolute bottom-4 left-4 bg-[#D4AF37]/90 text-black px-2.5 py-1 rounded text-[11px] font-mono font-bold tracking-wider">
-                      {project.capacityKWp} kWp
-                    </div>
+                    {/* Efficiency Badge */}
+                    {project.efficiency && (
+                      <div className="absolute bottom-4 left-4 bg-[#D4AF37]/90 text-black px-2.5 py-1 rounded text-[10px] font-mono font-bold tracking-wider">
+                        {project.efficiency}
+                      </div>
+                    )}
                   </div>
 
                   {/* Card Info */}
                   <div className="p-6 md:p-8 flex flex-col flex-grow justify-between">
                     <div>
-                      <div className="text-[10px] tracking-[0.25em] text-[#D4AF37] uppercase font-semibold mb-2">
-                        {project.type} • {project.location}
+                      <div className="text-[10px] tracking-[0.2em] text-[#D4AF37] uppercase font-semibold mb-2">
+                        {project.idealFor}
                       </div>
-                      <h3 className="text-xl md:text-2xl font-serif text-white group-hover:text-[#D4AF37] transition-colors mb-3">
+                      <h3 className="text-xl font-serif text-white group-hover:text-[#D4AF37] transition-colors mb-3">
                         {project.title}
                       </h3>
-                      <p className="text-xs font-light line-clamp-2 leading-relaxed mb-6" style={{ color: 'var(--text-muted)' }}>
+                      <p className="text-xs font-light line-clamp-3 leading-relaxed mb-4" style={{ color: 'var(--text-muted)' }}>
                         {project.description}
                       </p>
+
+                      {/* Specs bullets */}
+                      <ul className="space-y-1.5 mb-6 text-[11px] text-white/70">
+                        {project.specs.slice(0, 2).map((spec, i) => (
+                          <li key={i} className="flex items-start gap-2">
+                            <span className="w-1 h-1 rounded-full bg-[#D4AF37] mt-1.5 shrink-0" />
+                            <span className="line-clamp-1">{spec}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
 
-                    {/* Footer specs & meeting trigger */}
+                    {/* Footer meeting trigger */}
                     <div className="pt-4 border-t border-white/10 flex items-center justify-between">
-                      <div className="text-[11px] text-white/60">
-                        <span className="text-[#10B981] font-semibold">{project.carbonOffsetTons} Tons</span> CO₂ Offset
-                      </div>
-                      <Link
-                        to={`/projects/${project.id}`}
-                        className="text-xs text-[#D4AF37] hover:underline flex items-center gap-1 font-medium tracking-wider uppercase"
+                      <Button
+                        variant="gold"
+                        size="sm"
+                        fullWidth
+                        onClick={() => onOpenConsultation(ownersData[0], project)}
+                        icon={<Calendar size={13} />}
                       >
-                        <span>Inspect Specs</span>
-                        <ChevronRight size={14} />
-                      </Link>
+                        Consult on this Panel
+                      </Button>
                     </div>
                   </div>
                 </Card>
@@ -354,21 +365,40 @@ export const Home: React.FC<HomeProps> = ({ onOpenConsultation }) => {
                       {ownersData[0].bio}
                     </p>
 
-                    {/* Quick Telemetry Grid */}
+                    {/* Authentic Attributes Grid */}
                     <div className="grid grid-cols-3 gap-3 p-4 rounded-xl border text-center" style={{ backgroundColor: 'var(--bg-section-muted)', borderColor: 'var(--border-card)' }}>
                       <div>
-                        <span className="text-[10px] text-white/40 uppercase block tracking-wider">Asset Portfolio</span>
-                        <span className="font-serif text-lg md:text-xl text-[#D4AF37] font-bold">{ownersData[0].totalCapacityMW} MW</span>
+                        <span className="text-[10px] text-white/40 uppercase block tracking-wider font-medium">Availability</span>
+                        <span className="font-serif text-sm md:text-base text-[#D4AF37] font-semibold">Remote</span>
                       </div>
                       <div>
-                        <span className="text-[10px] text-white/40 uppercase block tracking-wider">Solar Projects</span>
-                        <span className="font-serif text-lg md:text-xl text-white font-bold">{ownersData[0].completedProjectsCount}+</span>
+                        <span className="text-[10px] text-white/40 uppercase block tracking-wider font-medium">Pricing</span>
+                        <span className="font-serif text-sm md:text-base text-white font-semibold">Contact</span>
                       </div>
                       <div>
-                        <span className="text-[10px] text-white/40 uppercase block tracking-wider">Verification</span>
-                        <span className="font-serif text-lg md:text-xl text-[#10B981] font-bold">100% Direct</span>
+                        <span className="text-[10px] text-white/40 uppercase block tracking-wider font-medium">Access</span>
+                        <span className="font-serif text-sm md:text-base text-[#10B981] font-semibold">Direct Desk</span>
                       </div>
                     </div>
+
+                    {/* Services Tags from Profile */}
+                    {ownersData[0].services && (
+                      <div>
+                        <span className="text-[10px] tracking-wider uppercase text-white/40 block mb-2 font-semibold">
+                          Services & Expertise:
+                        </span>
+                        <div className="flex flex-wrap gap-1.5">
+                          {ownersData[0].services.map(srv => (
+                            <span
+                              key={srv}
+                              className="text-[11px] px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-white/80"
+                            >
+                              {srv}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    )}
 
                     {/* Consultation CTAs */}
                     <div className="pt-2 flex flex-col sm:flex-row items-center gap-4">
@@ -383,7 +413,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenConsultation }) => {
                       </Button>
                       <Link to="/projects" className="w-full sm:w-auto">
                         <Button variant="outline" size="md" fullWidth>
-                          Inspect Solar Projects
+                          Explore Solar Panels
                         </Button>
                       </Link>
                     </div>

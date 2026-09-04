@@ -43,7 +43,7 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ onOpenConsultation
             className="inline-flex items-center gap-2 text-xs tracking-widest uppercase text-white/70 hover:text-[#D4AF37] transition-colors py-2 px-4 rounded-full bg-black/40 border border-white/10 backdrop-blur-md"
           >
             <ArrowLeft size={14} />
-            <span>Back to Solar Portfolio</span>
+            <span>Back to Solar Panels</span>
           </Link>
         </div>
       </div>
@@ -83,7 +83,7 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ onOpenConsultation
                   onClick={() => onOpenConsultation(project.owner, project)}
                   icon={<Calendar size={15} />}
                 >
-                  Meet Project Owner
+                  Consult with Owner
                 </Button>
               </div>
             </div>
@@ -217,7 +217,7 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ onOpenConsultation
               {/* Action Column */}
               <div className="shrink-0 flex flex-col items-center lg:items-end gap-3 w-full sm:w-auto">
                 <div className="text-xs text-white/60 mb-1">
-                  Rating: <span className="text-[#D4AF37] font-semibold">{project.owner.rating} ★</span> • {project.owner.completedProjectsCount} Commissioned Sites
+                  Status: <span className="text-[#D4AF37] font-semibold">Available for Advisory</span> • {project.owner.availability}
                 </div>
                 <Button
                   variant="gold"
@@ -226,7 +226,7 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ onOpenConsultation
                   onClick={() => onOpenConsultation(project.owner, project)}
                   icon={<Calendar size={14} />}
                 >
-                  Schedule Meeting with {project.owner.name.split(' ')[0]}
+                  Consult with {project.owner.name.split(' ')[0]}
                 </Button>
               </div>
             </div>

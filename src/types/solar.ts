@@ -3,13 +3,17 @@ export type ProjectCategory =
   | 'Commercial Microgrid' 
   | 'Architectural BIPV' 
   | 'Utility Solar Park' 
-  | 'Agri-PV Farm';
+  | 'Agri-PV Farm'
+  | 'Monocrystalline TOPCon'
+  | 'Bifacial Dual-Glass'
+  | 'Solar Roof Shingles';
 
 export type ProjectStatus = 
   | 'Active Generation' 
-  | 'Commissioned' 
+  | 'Commercial Deployment' 
   | 'Under Installation' 
-  | 'Open for Host Leasing';
+  | 'Open for Host Leasing'
+  | 'Available for Installation';
 
 export interface SolarOwner {
   id: string;
@@ -19,13 +23,13 @@ export interface SolarOwner {
   bio: string;
   avatar: string;
   verified: boolean;
-  totalCapacityMW: number;
   location: string;
+  availability?: string;
+  pricing?: string;
   specialization: string;
-  rating: number;
-  completedProjectsCount: number;
-  phone: string;
+  services?: string[];
   email: string;
+  secondaryEmail?: string;
   availableMeetingTypes: (
     | 'Virtual Consultation' 
     | 'On-Site Feasibility Audit' 
@@ -37,19 +41,22 @@ export interface SolarOwner {
 export interface SolarProject {
   id: string;
   title: string;
-  type: ProjectCategory;
-  status: ProjectStatus;
-  location: string;
-  capacityKWp: number;
-  annualGenerationMWh: number;
-  carbonOffsetTons: number;
+  type: string;
+  panelType?: string;
+  efficiency?: string;
+  idealFor?: string;
+  status?: string;
+  location?: string;
+  capacityKWp?: number;
+  annualGenerationMWh?: number;
+  carbonOffsetTons?: number;
   image: string;
   gallery: string[];
   description: string;
   panelTechnology: string;
-  inverterBattery: string;
-  certification: string;
-  roiPaybackYears: number;
+  inverterBattery?: string;
+  certification?: string;
+  roiPaybackYears?: number;
   owner: SolarOwner;
   specs: string[];
   highlights: string[];

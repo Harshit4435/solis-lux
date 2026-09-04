@@ -18,9 +18,6 @@ export const MeetOwnerModal: React.FC<MeetOwnerModalProps> = ({
   targetOwner,
   targetProject
 }) => {
-  const [selectedOwnerId, setSelectedOwnerId] = useState(
-    targetOwner?.id || ownersData[0].id
-  );
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
@@ -33,7 +30,7 @@ export const MeetOwnerModal: React.FC<MeetOwnerModalProps> = ({
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const selectedOwner = ownersData.find(o => o.id === selectedOwnerId) || targetOwner || ownersData[0];
+  const selectedOwner = targetOwner || ownersData[0];
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -160,33 +157,27 @@ export const MeetOwnerModal: React.FC<MeetOwnerModalProps> = ({
                           <span className="text-sm font-semibold text-white">{selectedOwner.name}</span>
                           {selectedOwner.verified && (
                             <span className="flex items-center text-[10px] text-[#D4AF37] gap-0.5">
-                              <ShieldCheck size={12} /> Verified
+                              <ShieldCheck size={12} /> Verified Owner
                             </span>
                           )}
                         </div>
                         <p className="text-[11px]" style={{ color: 'var(--text-muted)' }}>
-                          {selectedOwner.company} • {selectedOwner.totalCapacityMW} MW Deployed
+                          {selectedOwner.company} • Founder Desk • Available: Remote
                         </p>
                       </div>
                     </div>
 
                     <div className="w-full sm:w-auto flex items-center justify-between sm:justify-end gap-3 text-[11px]">
-                      <select
-                        value={selectedOwnerId}
-                        onChange={e => setSelectedOwnerId(e.target.value)}
-                        className="px-2 py-1.5 rounded bg-black/40 border border-white/10 text-white text-[11px] focus:outline-none focus:border-[#D4AF37]"
-                      >
-                        {ownersData.map(o => (
-                          <option key={o.id} value={o.id}>Switch: {o.name.split(' ')[0]}</option>
-                        ))}
-                      </select>
+                      <span className="text-[10px] text-[#D4AF37] px-2.5 py-1 rounded bg-[#D4AF37]/10 border border-[#D4AF37]/30 font-medium">
+                        Direct Matchmaking
+                      </span>
                     </div>
                   </div>
 
                   {targetProject && (
                     <div className="p-3 rounded-lg border border-[#D4AF37]/30 bg-[#D4AF37]/5 flex items-center justify-between text-xs">
-                      <span className="text-[#D4AF37] font-medium">Referenced Development: {targetProject.title}</span>
-                      <span className="text-white/60">{targetProject.capacityKWp} kWp • {targetProject.location}</span>
+                      <span className="text-[#D4AF37] font-medium">Referenced Panel: {targetProject.title}</span>
+                      <span className="text-white/60">{targetProject.type}</span>
                     </div>
                   )}
 
@@ -250,12 +241,11 @@ export const MeetOwnerModal: React.FC<MeetOwnerModalProps> = ({
 
                     <div>
                       <label className="block text-[11px] uppercase tracking-wider mb-1.5" style={{ color: 'var(--text-muted)' }}>
-                        Mobile / WhatsApp Number *
+                        Contact Number (Optional)
                       </label>
                       <input
-                        required
                         type="tel"
-                        placeholder="+91 98765 43210"
+                        placeholder="e.g. Your phone or WhatsApp"
                         value={phone}
                         onChange={e => setPhone(e.target.value)}
                         className="w-full px-4 py-3 rounded-md bg-white/5 border border-white/10 text-white text-xs focus:outline-none focus:border-[#D4AF37] transition-colors"

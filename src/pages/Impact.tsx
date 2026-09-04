@@ -4,7 +4,6 @@ import { PageHeader } from '../components/common/PageHeader';
 import { Card } from '../components/common/Card';
 import { Button } from '../components/common/Button';
 import { Reveal } from '../components/common/Reveal';
-import { AnimatedCounter } from '../components/common/AnimatedCounter';
 
 interface ImpactProps {
   onOpenConsultation: () => void;
@@ -21,30 +20,7 @@ export const Impact: React.FC<ImpactProps> = ({ onOpenConsultation }) => {
       />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-16 pt-12">
-        {/* Metric Counter Quad */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-24 p-10 rounded-2xl border" style={{ backgroundColor: 'var(--bg-section-muted)', borderColor: 'var(--border-divider)' }}>
-          <AnimatedCounter
-            value={420000}
-            suffix="+"
-            label="Metric Tons CO₂ Offset"
-          />
-          <AnimatedCounter
-            value={85000000}
-            prefix="₹"
-            label="Annual Client Grid Savings"
-          />
-          <AnimatedCounter
-            value={32}
-            suffix="M Liters"
-            label="Water Saved (Dry Cleaning)"
-          />
-          <AnimatedCounter
-            value={98.6}
-            decimals={1}
-            suffix="%"
-            label="Circular Panel Recyclability"
-          />
-        </div>
+
 
         {/* 3 Impact Pillars */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
