@@ -7,7 +7,8 @@ import {
   Leaf, 
   Cpu, 
   Calendar, 
-  ChevronRight
+  ChevronRight,
+  MapPin
 } from 'lucide-react';
 import { Button } from '../components/common/Button';
 import { Card } from '../components/common/Card';
@@ -289,79 +290,108 @@ export const Home: React.FC<HomeProps> = ({ onOpenConsultation }) => {
         </div>
       </section>
 
-      {/* 5. VERIFIED SOLAR ASSET OWNERS & EPC SPECIALISTS */}
+      {/* 5. VERIFIED SOLAR ASSET OWNER */}
       <section className="relative py-24 lg:py-36 px-6 lg:px-16 overflow-hidden">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center max-w-3xl mx-auto mb-20">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center max-w-3xl mx-auto mb-16">
             <Reveal direction="up" delay={0.1}>
-              <div className="text-xs tracking-[0.3em] uppercase text-[#D4AF37] mb-3 font-semibold">
-                DIRECT MEETING PLATFORM
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-[#D4AF37]/30 bg-[#D4AF37]/10 text-xs tracking-[0.3em] uppercase text-[#D4AF37] mb-4 font-semibold">
+                <ShieldCheck size={14} />
+                DIRECT OWNER VISIBILITY
               </div>
             </Reveal>
             <Reveal direction="up" delay={0.2}>
               <h2 className="text-3xl md:text-5xl font-serif text-white font-normal mb-4">
-                Meet Verified Solar Asset Owners & Engineers.
+                Meet the Solar Asset Owner.
               </h2>
             </Reveal>
             <Reveal direction="up" delay={0.3}>
               <p className="text-xs md:text-sm font-light leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-                Skip intermediaries. Connect directly with principal solar plant holders, EPC license owners, and rooftop host investors for confidential consultations.
+                This site is engineered exclusively for solar panel project visibility. Connect directly with the asset owner for site audits, commercial rooftop co-development, and clean energy matchmaking without intermediaries.
               </p>
             </Reveal>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {ownersData.map((owner, idx) => (
-              <Reveal key={owner.id} direction="up" delay={0.1 * idx}>
-                <Card className="p-6 text-center flex flex-col justify-between h-full group">
-                  <div>
-                    {/* Avatar */}
-                    <div className="relative w-24 h-24 mx-auto mb-5">
+          {/* Single Owner Spotlight Card */}
+          {ownersData[0] && (
+            <Reveal direction="up" delay={0.2}>
+              <Card className="p-8 md:p-12 border border-[#D4AF37]/30 relative overflow-hidden bg-gradient-to-br from-[#1b082e]/50 via-[var(--bg-card)] to-[#08090A]">
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center">
+                  {/* Photo with luxury ring */}
+                  <div className="md:col-span-5 flex flex-col items-center text-center">
+                    <div className="relative w-48 h-48 sm:w-56 sm:h-56 rounded-full p-1 bg-gradient-to-tr from-[#D4AF37] via-[#A855F7] to-[#D4AF37] shadow-[0_0_40px_rgba(168,85,247,0.3)] mb-4">
                       <img
-                        src={owner.avatar}
-                        alt={owner.name}
-                        className="w-full h-full rounded-full object-cover border-2 border-[#D4AF37]/40 group-hover:border-[#D4AF37] transition-colors"
+                        src={ownersData[0].avatar}
+                        alt={ownersData[0].name}
+                        className="w-full h-full rounded-full object-cover"
                       />
-                      {owner.verified && (
-                        <div className="absolute bottom-0 right-0 w-6 h-6 rounded-full bg-[#D4AF37] text-black flex items-center justify-center text-xs">
-                          <ShieldCheck size={14} />
-                        </div>
-                      )}
+                      <div className="absolute bottom-2 right-2 px-3 py-1 rounded-full bg-[#D4AF37] text-black font-bold text-xs flex items-center gap-1 shadow-lg">
+                        <ShieldCheck size={14} />
+                        Verified Owner
+                      </div>
                     </div>
-
-                    <h3 className="text-lg font-serif text-white font-medium group-hover:text-[#D4AF37] transition-colors">
-                      {owner.name}
-                    </h3>
-                    <div className="text-[11px] text-[#D4AF37] font-semibold tracking-wider uppercase mb-1">
-                      {owner.role}
-                    </div>
-                    <p className="text-[11px] text-white/50 mb-4">
-                      {owner.company} • {owner.location}
-                    </p>
-                    <p className="text-xs font-light line-clamp-3 leading-relaxed mb-6" style={{ color: 'var(--text-muted)' }}>
-                      {owner.bio}
-                    </p>
+                    <span className="text-[11px] tracking-[0.25em] uppercase text-[#D4AF37] font-semibold">
+                      AI VITTORIS PRINCIPAL
+                    </span>
                   </div>
 
-                  <div className="pt-4 border-t border-white/10 space-y-3">
-                    <div className="flex justify-between text-[10px] text-white/60">
-                      <span>Total Portfolio:</span>
-                      <span className="text-[#D4AF37] font-semibold">{owner.totalCapacityMW} MW</span>
+                  {/* Bio & Details */}
+                  <div className="md:col-span-7 space-y-5 text-left">
+                    <div>
+                      <h3 className="text-2xl md:text-4xl font-serif text-white font-medium mb-1">
+                        {ownersData[0].name}
+                      </h3>
+                      <p className="text-xs md:text-sm text-[#D4AF37] font-semibold tracking-wider uppercase mb-1">
+                        {ownersData[0].role}
+                      </p>
+                      <p className="text-xs text-white/50 flex items-center gap-1.5">
+                        <MapPin size={13} />
+                        <span>{ownersData[0].company} • {ownersData[0].location}</span>
+                      </p>
                     </div>
-                    <Button
-                      variant="gold"
-                      size="sm"
-                      fullWidth
-                      onClick={() => onOpenConsultation(owner)}
-                      icon={<Calendar size={13} />}
-                    >
-                      Book Consultation
-                    </Button>
+
+                    <p className="text-xs md:text-sm font-light leading-relaxed" style={{ color: 'var(--text-muted)' }}>
+                      {ownersData[0].bio}
+                    </p>
+
+                    {/* Quick Telemetry Grid */}
+                    <div className="grid grid-cols-3 gap-3 p-4 rounded-xl border text-center" style={{ backgroundColor: 'var(--bg-section-muted)', borderColor: 'var(--border-card)' }}>
+                      <div>
+                        <span className="text-[10px] text-white/40 uppercase block tracking-wider">Asset Portfolio</span>
+                        <span className="font-serif text-lg md:text-xl text-[#D4AF37] font-bold">{ownersData[0].totalCapacityMW} MW</span>
+                      </div>
+                      <div>
+                        <span className="text-[10px] text-white/40 uppercase block tracking-wider">Solar Projects</span>
+                        <span className="font-serif text-lg md:text-xl text-white font-bold">{ownersData[0].completedProjectsCount}+</span>
+                      </div>
+                      <div>
+                        <span className="text-[10px] text-white/40 uppercase block tracking-wider">Verification</span>
+                        <span className="font-serif text-lg md:text-xl text-[#10B981] font-bold">100% Direct</span>
+                      </div>
+                    </div>
+
+                    {/* Consultation CTAs */}
+                    <div className="pt-2 flex flex-col sm:flex-row items-center gap-4">
+                      <Button
+                        variant="gold"
+                        size="md"
+                        onClick={() => onOpenConsultation(ownersData[0])}
+                        icon={<Calendar size={15} />}
+                        fullWidth
+                      >
+                        Book Direct Consultation with Owner
+                      </Button>
+                      <Link to="/projects" className="w-full sm:w-auto">
+                        <Button variant="outline" size="md" fullWidth>
+                          Inspect Solar Projects
+                        </Button>
+                      </Link>
+                    </div>
                   </div>
-                </Card>
-              </Reveal>
-            ))}
-          </div>
+                </div>
+              </Card>
+            </Reveal>
+          )}
         </div>
       </section>
 

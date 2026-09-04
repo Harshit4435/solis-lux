@@ -54,7 +54,7 @@ export const projectsData: SolarProject[] = [
     inverterBattery: 'SolarEdge High-Efficiency Inverters with individual panel Power Optimizers',
     certification: 'Safety Glass ANSI Z97.1 / EN 12600, IEC 63092 BIPV Standard',
     roiPaybackYears: 5.6,
-    owner: ownersData[3],
+    owner: ownersData[0],
     specs: [
       'Custom architectural tint matching European structural low-iron glass',
       'Sound attenuation acoustic laminate (STC 44 rating)',
@@ -85,8 +85,8 @@ export const projectsData: SolarProject[] = [
     panelTechnology: 'Bifacial Perc 670W Ultra-High Output Modules with Anti-Soiling Hydrophobic Coating',
     inverterBattery: 'SMA Sunny Highpower 150kW String Inverters with SCADA telemetry',
     certification: 'ISO 9001, ISO 14001, CEA Grid Code Compliance, CE',
-    roiPaybackYears: 3.2,
-    owner: ownersData[2],
+    roiPaybackYears: 3.4,
+    owner: ownersData[0],
     specs: [
       'Walkway robotic cleaning drones requiring zero water consumption',
       'Smart grid synchronization with 33kV dedicated industrial substation',
@@ -118,7 +118,7 @@ export const projectsData: SolarProject[] = [
     inverterBattery: 'Central Containerized Power Conditioning Systems with 4 MWh BESS Storage',
     certification: 'TUV Rheinland, IEC 62804 PID Resistant, MNRE Approved Tier-1',
     roiPaybackYears: 4.8,
-    owner: ownersData[1],
+    owner: ownersData[0],
     specs: [
       'Single-axis AI smart trackers calculating astronomical elevation dynamically',
       'Integrated drip-irrigation grid utilizing captured rainwater runoff',
@@ -181,7 +181,7 @@ export const projectsData: SolarProject[] = [
     inverterBattery: 'Huawei Smart String Inverters with AI Arcfault Circuit Interruption (AFCI)',
     certification: 'UL 1703, IEC 61215, LEED Platinum Targeted Certification',
     roiPaybackYears: 3.8,
-    owner: ownersData[2],
+    owner: ownersData[0],
     specs: [
       'Integrated shadow-tolerant cell matrix with bypass diodes per quadrant',
       'High-rise wind load engineering certified up to 210 km/h wind shear',
