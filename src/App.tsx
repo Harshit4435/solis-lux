@@ -73,7 +73,7 @@ function App() {
   };
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <ScrollToTop />
       <div className="min-h-screen flex flex-col bg-[var(--bg-body)] text-[var(--text-body)] transition-colors duration-500">
         <Navbar

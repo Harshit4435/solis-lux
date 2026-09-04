@@ -4,6 +4,7 @@ import { defineConfig } from 'vite'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/solis-lux/',
   plugins: [react(), tailwindcss()],
   server: {
     host: true,
