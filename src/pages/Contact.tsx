@@ -96,8 +96,8 @@ export const Contact: React.FC<ContactProps> = ({ onOpenConsultation }) => {
                   </div>
                   <div>
                     <h4 className="text-sm font-serif text-white mb-1">Electronic Correspondence</h4>
-                    <p style={{ color: 'var(--text-muted)' }}>advisory@vittoris.energy</p>
-                    <p style={{ color: 'var(--text-muted)' }}>owners.registry@vittoris.energy</p>
+                    <p style={{ color: 'var(--text-muted)' }}>udayveer@vittoris.in</p>
+                    <p style={{ color: 'var(--text-muted)' }}>contact@vittoris.in</p>
                   </div>
                 </div>
               </Card>

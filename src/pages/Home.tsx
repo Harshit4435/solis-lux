@@ -331,7 +331,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenConsultation }) => {
                       </div>
                     </div>
                     <span className="text-[11px] tracking-[0.25em] uppercase text-[#D4AF37] font-semibold">
-                      AI VITTORIS PRINCIPAL
+                      FOUNDER | VITTORIS
                     </span>
                   </div>
 

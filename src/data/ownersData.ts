@@ -3,11 +3,11 @@ import ownerPhoto from '../assets/branding/owner-photo.jpg';
 
 export const ownersData: SolarOwner[] = [
   {
-    id: 'harshit-thakur',
-    name: 'Harshit Thakur',
-    role: 'Solar Asset Owner & Principal Developer',
+    id: 'udayveer',
+    name: 'Udayveer',
+    role: 'Founder | Vittoris & Solar Asset Owner',
     company: 'AI Vittoris',
-    bio: 'Principal solar asset owner and founder at AI Vittoris. Dedicated to high-visibility architectural solar panel projects, rooftop leasehold matchmaking, and direct clean energy partnerships without middlemen.',
+    bio: 'Founder at Vittoris and principal solar asset owner. Dedicated to high-visibility architectural solar panel projects, commercial rooftop leasehold matchmaking, and direct clean energy partnerships without middlemen.',
     avatar: ownerPhoto,
     verified: true,
     totalCapacityMW: 480.5,
@@ -16,7 +16,7 @@ export const ownersData: SolarOwner[] = [
     rating: 5.0,
     completedProjectsCount: 150,
     phone: '+91 (020) 8840 2200',
-    email: 'contact@aivittoris.com',
+    email: 'udayveer@vittoris.in',
     availableMeetingTypes: [
       'Virtual Consultation',
       'On-Site Feasibility Audit',

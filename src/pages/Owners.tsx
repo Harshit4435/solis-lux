@@ -22,7 +22,7 @@ export const Owners: React.FC<OwnersProps> = ({ onOpenConsultation }) => {
         badge="VERIFIED SOLAR ASSET OWNER"
         subtitle="AI VITTORIS • SOLAR PANEL PROJECT VISIBILITY"
         title="Direct Stakeholder & Asset Owner Matchmaking."
-        description="Connect directly with Harshit Thakur, Principal Solar Asset Owner at AI Vittoris. This platform exists for transparent visibility of commissioned solar panel installations, commercial rooftop leaseholds, and clean energy co-development without intermediaries."
+        description="Connect directly with Udayveer, Founder at Vittoris & Principal Solar Asset Owner. This platform exists for transparent visibility of commissioned solar panel installations, commercial rooftop leaseholds, and clean energy co-development without intermediaries."
       />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-16 pt-12">
@@ -45,7 +45,7 @@ export const Owners: React.FC<OwnersProps> = ({ onOpenConsultation }) => {
                     </div>
                   </div>
                   <span className="text-xs tracking-[0.3em] uppercase text-[#D4AF37] font-bold">
-                    AI VITTORIS PRINCIPAL
+                    FOUNDER | VITTORIS
                   </span>
                 </div>
 
@@ -120,11 +120,18 @@ export const Owners: React.FC<OwnersProps> = ({ onOpenConsultation }) => {
                       Book 1-on-1 Consultation with Owner
                     </Button>
                     <a
-                      href="mailto:contact@aivittoris.com"
+                      href="mailto:udayveer@vittoris.in"
                       className="w-full sm:w-auto text-xs px-5 py-3.5 rounded-xl border border-white/20 text-white hover:border-[#D4AF37] hover:text-[#D4AF37] transition-all text-center flex items-center justify-center gap-2"
                     >
                       <Mail size={14} />
-                      contact@aivittoris.com
+                      udayveer@vittoris.in
+                    </a>
+                    <a
+                      href="mailto:contact@vittoris.in"
+                      className="w-full sm:w-auto text-xs px-5 py-3.5 rounded-xl border border-white/20 text-white hover:border-[#D4AF37] hover:text-[#D4AF37] transition-all text-center flex items-center justify-center gap-2"
+                    >
+                      <Mail size={14} />
+                      contact@vittoris.in
                     </a>
                     <a
                       href="tel:+9102088402200"
