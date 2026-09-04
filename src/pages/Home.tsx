@@ -53,9 +53,9 @@ export const Home: React.FC<HomeProps> = ({ onOpenConsultation }) => {
         {/* Hero Content */}
         <div className="relative z-20 max-w-7xl mx-auto px-6 w-full text-center flex flex-col items-center py-24">
           <Reveal direction="down" delay={0.2}>
-            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-[#A855F7]/30 bg-[#3B0764]/30 mb-8 backdrop-blur-md shadow-[0_0_20px_rgba(168,85,247,0.15)]">
-              <VittorisIcon size={18} />
-              <span className="text-xs tracking-[0.35em] uppercase text-[#C084FC] font-semibold">
+            <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full border border-[#A855F7]/40 bg-[#3B0764]/40 mb-8 backdrop-blur-md shadow-[0_0_25px_rgba(168,85,247,0.25)]">
+              <VittorisIcon size={24} />
+              <span className="text-xs md:text-sm tracking-[0.3em] uppercase text-[#E9D5FF] font-bold">
                 AI VITTORIS • CLEAN ENERGY PLATFORM
               </span>
             </div>
@@ -157,7 +157,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenConsultation }) => {
 
             <Reveal direction="up" delay={0.3}>
               <p className="text-sm md:text-base leading-relaxed font-light mb-6" style={{ color: 'var(--text-muted)' }}>
-                Traditional solar installations often sacrifice structural beauty for utility. Vittoris bridges this divide by providing high-visibility showcases of cutting-edge photovoltaic estates, BIPV architectural glass, and industrial microgrids.
+                Traditional solar installations often sacrifice structural beauty for utility. AI Vittoris bridges this divide by providing high-visibility showcases of cutting-edge photovoltaic estates, BIPV architectural glass, and industrial microgrids.
               </p>
             </Reveal>
 
@@ -383,7 +383,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenConsultation }) => {
             </Reveal>
             <Reveal direction="up" delay={0.2}>
               <h2 className="text-3xl md:text-5xl font-serif text-white font-normal mb-4">
-                Four Pillars of Vittoris Standards.
+                Four Pillars of AI Vittoris Standards.
               </h2>
             </Reveal>
             <Reveal direction="up" delay={0.3}>

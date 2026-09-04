@@ -28,7 +28,7 @@ export const Contact: React.FC<ContactProps> = ({ onOpenConsultation }) => {
     <div className="min-h-screen pb-32">
       <PageHeader
         badge="DIRECT ENGAGEMENT"
-        subtitle="VITTORIS ADVISORY DESK"
+        subtitle="AI VITTORIS ADVISORY DESK"
         title="Schedule a Private Solar Consultation."
         description="Whether you are an estate proprietor evaluating rooftop solarization, a commercial landlord offering rooftop leaseholds, or an accredited solar developer seeking asset visibility."
       />
@@ -226,7 +226,7 @@ export const Contact: React.FC<ContactProps> = ({ onOpenConsultation }) => {
               FREQUENTLY ADDRESSED
             </span>
             <h3 className="text-2xl md:text-3xl font-serif text-white">
-              Understanding the Vittoris Visibility Model.
+              Understanding the AI Vittoris Visibility Model.
             </h3>
           </div>
 
@@ -234,11 +234,11 @@ export const Contact: React.FC<ContactProps> = ({ onOpenConsultation }) => {
             {[
               {
                 q: 'How does user-owner direct matchmaking work?',
-                a: 'Unlike generic aggregate portals, Vittoris directly connects verified property owners with accredited solar asset owners and principal EPC license holders. Inquiries trigger direct calendar synchronization for on-site audits or virtual technical briefings.'
+                a: 'Unlike generic aggregate portals, AI Vittoris directly connects verified property owners with accredited solar asset owners and principal EPC license holders. Inquiries trigger direct calendar synchronization for on-site audits or virtual technical briefings.'
               },
               {
                 q: 'What is the role of this platform if it is only for visibility?',
-                a: 'Vittoris serves as a dedicated architectural showroom and credibility index. We showcase real commissioned projects, verified production data, and engineering specs so property seekers can evaluate genuine workmanship without sales middlemen.'
+                a: 'AI Vittoris serves as a dedicated architectural showroom and credibility index. We showcase real commissioned projects, verified production data, and engineering specs so property seekers can evaluate genuine workmanship without sales middlemen.'
               },
               {
                 q: 'How are solar plant owners and developers verified?',

@@ -122,16 +122,18 @@ export const VittorisLogo: React.FC<VittorisLogoProps> = ({
 
       {/* Official Typography */}
       <div className="flex flex-col justify-center">
-        {showAiPrefix && (
-          <span className="text-[9px] md:text-[10.5px] font-sans font-bold tracking-[0.28em] text-[#C084FC] uppercase leading-tight">
-            AI
+        <div className="flex items-baseline gap-2 leading-none">
+          {showAiPrefix && (
+            <span className="text-[#C084FC] font-sans font-extrabold tracking-[0.2em] text-sm md:text-base group-hover:text-[#E9D5FF] transition-colors">
+              AI
+            </span>
+          )}
+          <span className={`font-serif font-bold tracking-[0.18em] text-white group-hover:text-[#C084FC] transition-colors ${textSizes[size]}`}>
+            VITTORIS
           </span>
-        )}
-        <div className={`font-serif font-bold tracking-[0.2em] text-white group-hover:text-[#C084FC] transition-colors leading-none ${textSizes[size]}`}>
-          VITTORIS
         </div>
         {showSubtitle && (
-          <span className="text-[7.5px] md:text-[8.5px] tracking-[0.3em] uppercase text-white/50 font-medium mt-1 leading-none">
+          <span className="text-[7.5px] md:text-[8.5px] tracking-[0.28em] uppercase text-white/50 font-medium mt-1.5 leading-none">
             {subtitleText}
           </span>
         )}

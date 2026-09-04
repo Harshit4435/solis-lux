@@ -48,7 +48,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenConsultation }) => {
           {/* Brand Col */}
           <div className="lg:col-span-2 space-y-4">
             <Link to="/" className="inline-block select-none">
-              <VittorisLogo size="lg" subtitleText="Solar Estates & EPC Platform" />
+              <VittorisLogo size="lg" subtitleText="Helping Businesses with AI & Clean Energy Solutions" />
             </Link>
             <p className="text-xs leading-relaxed max-w-sm font-light" style={{ color: 'var(--text-muted)' }}>
               A curated architectural solar visibility exchange connecting high-net-worth estate owners, commercial landlords, and verified solar plant developers across Western India and global corridors.
@@ -147,7 +147,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenConsultation }) => {
               </div>
               <div className="flex items-center gap-2">
                 <Mail size={14} className="text-[#D4AF37] shrink-0" />
-                <span>advisory@vittoris.energy</span>
+                <span>contact@aivittoris.com</span>
               </div>
             </div>
           </div>
@@ -156,7 +156,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenConsultation }) => {
         {/* Bottom Sub-bar */}
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-[10px] tracking-wider" style={{ color: 'var(--text-muted)' }}>
           <div>
-            © {new Date().getFullYear()} VITTORIS SOLAR & CLEAN ENERGY PLATFORM. ALL RIGHTS RESERVED.
+            © {new Date().getFullYear()} AI VITTORIS. ALL RIGHTS RESERVED.
           </div>
           <div className="flex items-center gap-6">
             <span>CEA Grid Compliant</span>
