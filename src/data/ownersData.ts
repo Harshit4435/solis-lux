@@ -26,6 +26,7 @@ export const ownersData: SolarOwner[] = [
       'Social Media Marketing',
       'Advertising'
     ],
+    phone: '+91 90159 20523',
     email: 'udayveer@vittoris.in',
     secondaryEmail: 'contact@vittoris.in',
     availableMeetingTypes: [

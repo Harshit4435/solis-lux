@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import Lenis from 'lenis';
 import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
@@ -8,7 +8,6 @@ import { Home } from './pages/Home';
 import { Projects } from './pages/Projects';
 import { ProjectDetail } from './pages/ProjectDetail';
 import { Owners } from './pages/Owners';
-import { Impact } from './pages/Impact';
 import { Contact } from './pages/Contact';
 import type { SolarOwner, SolarProject } from './types/solar';
 
@@ -102,7 +101,7 @@ function App() {
             />
             <Route
               path="/impact"
-              element={<Impact onOpenConsultation={() => handleOpenConsultation()} />}
+              element={<Navigate to="/projects" replace />}
             />
             <Route
               path="/contact"

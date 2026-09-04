@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Search, Zap, Calendar, ShieldCheck, Mail } from 'lucide-react';
+import { Search, Zap, Calendar, ShieldCheck, Mail, Phone } from 'lucide-react';
 import { PageHeader } from '../components/common/PageHeader';
 import { Card } from '../components/common/Card';
 import { Button } from '../components/common/Button';
@@ -90,10 +90,17 @@ export const Projects: React.FC<ProjectsProps> = ({ onOpenConsultation }) => {
                   </p>
                   <div className="flex flex-wrap items-center justify-center sm:justify-start gap-4 text-xs">
                     <a
-                      href={`mailto:${ownersData[0].email}`}
-                      className="text-[#D4AF37] hover:underline flex items-center gap-1.5 font-medium"
+                      href="tel:+919015920523"
+                      className="font-mono text-[#D4AF37] font-semibold hover:underline flex items-center gap-1.5 bg-[#D4AF37]/10 px-3 py-1 rounded-full border border-[#D4AF37]/30"
                     >
-                      <Mail size={12} />
+                      <Phone size={12} />
+                      <span>+91 90159 20523</span>
+                    </a>
+                    <a
+                      href={`mailto:${ownersData[0].email}`}
+                      className="text-white/90 hover:text-[#D4AF37] flex items-center gap-1.5 font-medium"
+                    >
+                      <Mail size={12} className="text-[#D4AF37]" />
                       <span>{ownersData[0].email}</span>
                     </a>
                     <a
@@ -244,18 +251,28 @@ export const Projects: React.FC<ProjectsProps> = ({ onOpenConsultation }) => {
                         <span className="text-[10px] text-[#D4AF37] block font-mono">Founder • Vittoris</span>
                       </div>
                     </div>
-                    <a
-                      href={`mailto:${project.owner.email}`}
-                      className="text-[11px] text-[#D4AF37] hover:underline flex items-center gap-1 bg-[#D4AF37]/10 px-2 py-1 rounded border border-[#D4AF37]/20"
-                      title="Direct Founder Email"
-                    >
-                      <Mail size={11} />
-                      <span>Email</span>
-                    </a>
+                    <div className="flex items-center gap-2">
+                      <a
+                        href="tel:+919015920523"
+                        className="text-[11px] text-white/90 hover:text-[#D4AF37] flex items-center gap-1 bg-white/5 px-2 py-1 rounded border border-white/10"
+                        title="Call 9015920523"
+                      >
+                        <Phone size={11} className="text-[#D4AF37]" />
+                        <span>Call</span>
+                      </a>
+                      <a
+                        href={`mailto:${project.owner.email}`}
+                        className="text-[11px] text-[#D4AF37] hover:underline flex items-center gap-1 bg-[#D4AF37]/10 px-2 py-1 rounded border border-[#D4AF37]/20"
+                        title="Direct Founder Email"
+                      >
+                        <Mail size={11} />
+                        <span>Email</span>
+                      </a>
+                    </div>
                   </div>
 
                   {/* Actions */}
-                  <div className="pt-2 border-t border-white/10">
+                  <div className="pt-2 border-t border-white/10 flex items-center gap-2">
                     <Button
                       variant="gold"
                       size="sm"
@@ -265,6 +282,15 @@ export const Projects: React.FC<ProjectsProps> = ({ onOpenConsultation }) => {
                     >
                       Consult with Owner on this Panel
                     </Button>
+                    <a
+                      href={`https://wa.me/919015920523?text=${encodeURIComponent(`Hi Udayveer, I would like to consult regarding the ${project.title} solar panels.`)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="py-2 px-3 rounded-lg bg-[#10B981]/15 hover:bg-[#10B981]/25 border border-[#10B981]/30 text-[#10B981] font-semibold text-xs transition-colors shrink-0 flex items-center gap-1"
+                      title="WhatsApp Udayveer"
+                    >
+                      <span>WhatsApp</span>
+                    </a>
                   </div>
                 </div>
               </Card>

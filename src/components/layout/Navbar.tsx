@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Sun, Moon, Menu, X, Calendar } from 'lucide-react';
+import { Sun, Moon, Menu, X, Calendar, Phone } from 'lucide-react';
 import { Button } from '../common/Button';
 import { VittorisLogo } from '../common/VittorisLogo';
 
@@ -74,6 +74,16 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           {/* Action CTAs */}
           <div className="hidden lg:flex items-center gap-4">
+            {/* Direct Phone Link */}
+            <a
+              href="tel:+919015920523"
+              className="flex items-center gap-2 text-xs text-white/90 hover:text-[#D4AF37] px-3.5 py-1.5 rounded-full border border-white/10 bg-white/5 transition-colors font-mono"
+              title="Call Owner Udayveer Singh"
+            >
+              <Phone size={12} className="text-[#D4AF37]" />
+              <span>+91 90159 20523</span>
+            </a>
+
             {/* Theme Toggle */}
             <button
               onClick={onToggleTheme}
@@ -90,12 +100,19 @@ export const Navbar: React.FC<NavbarProps> = ({
               onClick={onOpenConsultation}
               icon={<Calendar size={13} />}
             >
-              Meet Project Owner
+              Consult Owner
             </Button>
           </div>
 
           {/* Mobile Hamburger Button */}
           <div className="flex items-center gap-3 lg:hidden">
+            <a
+              href="tel:+919015920523"
+              className="w-8 h-8 rounded-full border border-[#D4AF37]/40 bg-[#D4AF37]/10 flex items-center justify-center text-[#D4AF37]"
+              title="Call 9015920523"
+            >
+              <Phone size={14} />
+            </a>
             <button
               onClick={onToggleTheme}
               className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center text-white/70"
@@ -130,7 +147,15 @@ export const Navbar: React.FC<NavbarProps> = ({
                 {link.name}
               </Link>
             ))}
+            
             <div className="pt-6 border-t border-white/10 flex flex-col gap-3">
+              <a
+                href="tel:+919015920523"
+                className="py-2.5 px-4 rounded-lg bg-white/5 border border-white/10 text-white flex items-center justify-center gap-2 font-mono text-sm"
+              >
+                <Phone size={14} className="text-[#D4AF37]" />
+                <span>+91 90159 20523</span>
+              </a>
               <Button
                 variant="gold"
                 onClick={() => {
@@ -139,7 +164,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 }}
                 icon={<Calendar size={15} />}
               >
-                Schedule Consultation
+                Consult Owner (Udayveer)
               </Button>
             </div>
           </nav>

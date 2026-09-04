@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, MapPin, CheckCircle2, Send, Calendar, ShieldCheck } from 'lucide-react';
+import { Mail, MapPin, CheckCircle2, Send, Calendar, ShieldCheck, Phone } from 'lucide-react';
 import { PageHeader } from '../components/common/PageHeader';
 import { Card } from '../components/common/Card';
 import { Button } from '../components/common/Button';
@@ -72,6 +72,31 @@ export const Contact: React.FC<ContactProps> = ({ onOpenConsultation }) => {
                     <h4 className="text-sm font-serif text-white mb-1">Founder Desk</h4>
                     <p style={{ color: 'var(--text-muted)' }}>Udayveer Singh • Founder | Vittoris</p>
                     <p className="text-[11px] text-[#D4AF37] mt-0.5">Available: Remote • Global Matchmaking</p>
+                  </div>
+                </div>
+              </Card>
+
+              <Card className="p-6 border border-[#D4AF37]/30 bg-gradient-to-br from-[#1b082e]/40 to-black/60">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-full bg-[#D4AF37]/15 text-[#D4AF37] flex items-center justify-center shrink-0">
+                    <Phone size={18} />
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-serif text-white mb-1">Direct Phone & WhatsApp</h4>
+                    <a
+                      href="tel:+919015920523"
+                      className="block text-[#D4AF37] hover:underline font-mono text-sm font-semibold transition-colors"
+                    >
+                      +91 90159 20523
+                    </a>
+                    <a
+                      href="https://wa.me/919015920523?text=Hi%20Udayveer%2C%20I%20would%20like%20to%20consult%20regarding%20solar%20panels."
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-[11px] text-[#10B981] hover:underline mt-1 font-medium"
+                    >
+                      <span>Open WhatsApp Chat →</span>
+                    </a>
                   </div>
                 </div>
               </Card>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, MapPin, ArrowUpRight } from 'lucide-react';
+import { Mail, MapPin, ArrowUpRight, Phone } from 'lucide-react';
 import { Button } from '../common/Button';
 import { VittorisLogo } from '../common/VittorisLogo';
 
@@ -135,6 +135,10 @@ export const Footer: React.FC<FooterProps> = ({ onOpenConsultation }) => {
               <div className="flex items-start gap-2">
                 <MapPin size={14} className="text-[#D4AF37] shrink-0 mt-0.5" />
                 <span>Vittoris • Available: Remote</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Phone size={14} className="text-[#D4AF37] shrink-0" />
+                <a href="tel:+919015920523" className="hover:text-[#D4AF37] transition-colors font-mono font-medium">+91 90159 20523</a>
               </div>
               <div className="flex items-center gap-2">
                 <Mail size={14} className="text-[#D4AF37] shrink-0" />

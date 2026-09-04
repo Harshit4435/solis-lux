@@ -6,7 +6,9 @@ import {
   Zap, 
   Calendar, 
   Download, 
-  ArrowLeft
+  ArrowLeft,
+  Phone,
+  Mail
 } from 'lucide-react';
 import { Button } from '../components/common/Button';
 import { Card } from '../components/common/Card';
@@ -240,6 +242,30 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ onOpenConsultation
               <div className="shrink-0 flex flex-col items-center lg:items-end gap-3 w-full sm:w-auto">
                 <div className="text-xs text-white/60 mb-1">
                   Status: <span className="text-[#D4AF37] font-semibold">Available for Advisory</span> • {project.owner.availability}
+                </div>
+                <div className="flex flex-wrap items-center gap-2 w-full sm:w-auto">
+                  <a
+                    href="tel:+919015920523"
+                    className="flex-1 sm:flex-initial py-2 px-3 rounded-lg bg-[#D4AF37]/10 hover:bg-[#D4AF37]/20 border border-[#D4AF37]/30 text-[#D4AF37] font-mono text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors"
+                  >
+                    <Phone size={13} />
+                    <span>+91 90159 20523</span>
+                  </a>
+                  <a
+                    href={`https://wa.me/919015920523?text=${encodeURIComponent(`Hi Udayveer, I am interested in consulting regarding the ${project.title} solar panels.`)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="py-2 px-3 rounded-lg bg-[#10B981]/15 hover:bg-[#10B981]/25 border border-[#10B981]/30 text-[#10B981] font-semibold text-xs transition-colors flex items-center justify-center gap-1"
+                  >
+                    <span>WhatsApp</span>
+                  </a>
+                  <a
+                    href={`mailto:udayveer@vittoris.in?subject=${encodeURIComponent(`Consultation: ${project.title}`)}`}
+                    className="py-2 px-3 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-white/80 hover:text-white text-xs font-medium transition-colors flex items-center justify-center gap-1"
+                  >
+                    <Mail size={13} />
+                    <span>Email</span>
+                  </a>
                 </div>
                 <Button
                   variant="gold"

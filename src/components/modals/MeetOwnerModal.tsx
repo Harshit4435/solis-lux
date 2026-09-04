@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Calendar, CheckCircle2, ShieldCheck, UserCheck } from 'lucide-react';
+import { X, Calendar, CheckCircle2, ShieldCheck, UserCheck, Phone, Mail } from 'lucide-react';
 import { Button } from '../common/Button';
 import type { SolarOwner, SolarProject } from '../../types/solar';
 import { ownersData } from '../../data/ownersData';
@@ -167,10 +167,30 @@ export const MeetOwnerModal: React.FC<MeetOwnerModalProps> = ({
                       </div>
                     </div>
 
-                    <div className="w-full sm:w-auto flex items-center justify-between sm:justify-end gap-3 text-[11px]">
-                      <span className="text-[10px] text-[#D4AF37] px-2.5 py-1 rounded bg-[#D4AF37]/10 border border-[#D4AF37]/30 font-medium">
-                        Direct Matchmaking
-                      </span>
+                    <div className="w-full sm:w-auto flex flex-wrap items-center justify-between sm:justify-end gap-2 text-[11px]">
+                      <a
+                        href="tel:+919015920523"
+                        className="flex items-center gap-1 text-[#D4AF37] font-mono font-semibold bg-[#D4AF37]/10 hover:bg-[#D4AF37]/20 px-2.5 py-1 rounded border border-[#D4AF37]/30 transition-colors"
+                        title="Direct Phone Line"
+                      >
+                        <Phone size={12} />
+                        <span>+91 90159 20523</span>
+                      </a>
+                      <a
+                        href="https://wa.me/919015920523?text=Hi%20Udayveer%2C%20I%20would%20like%20to%20consult%20regarding%20solar%20panels."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-1 text-[#10B981] font-semibold bg-[#10B981]/10 hover:bg-[#10B981]/20 px-2.5 py-1 rounded border border-[#10B981]/30 transition-colors"
+                      >
+                        <span>WhatsApp</span>
+                      </a>
+                      <a
+                        href="mailto:udayveer@vittoris.in"
+                        className="flex items-center gap-1 text-white/80 hover:text-white bg-white/5 hover:bg-white/10 px-2.5 py-1 rounded border border-white/10 transition-colors"
+                      >
+                        <Mail size={12} />
+                        <span>Email</span>
+                      </a>
                     </div>
                   </div>
 

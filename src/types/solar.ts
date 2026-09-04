@@ -26,6 +26,7 @@ export interface SolarOwner {
   location: string;
   availability?: string;
   pricing?: string;
+  phone?: string;
   specialization: string;
   services?: string[];
   email: string;

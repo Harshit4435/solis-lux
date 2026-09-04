@@ -1,21 +1,17 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { 
-  Sun, 
   ShieldCheck, 
-  Zap, 
-  Leaf, 
-  Cpu, 
   Calendar, 
   MapPin,
-  Mail
+  Mail,
+  Phone
 } from 'lucide-react';
 import { Button } from '../components/common/Button';
 import { Card } from '../components/common/Card';
 import { Reveal } from '../components/common/Reveal';
 import { VittorisIcon } from '../components/common/VittorisLogo';
 import { TelemetryStats } from '../components/solar/TelemetryStats';
-import { SolarCalculator } from '../components/solar/SolarCalculator';
 import { projectsData } from '../data/projectsData';
 import { ownersData } from '../data/ownersData';
 import type { SolarProject, SolarOwner } from '../types/solar';
@@ -78,26 +74,55 @@ export const Home: React.FC<HomeProps> = ({ onOpenConsultation }) => {
           </Reveal>
 
           <Reveal direction="up" delay={0.5}>
-            <p className="text-sm md:text-base lg:text-lg text-white/80 font-light max-w-2xl leading-relaxed mb-10">
-              The premier visibility exchange connecting visionary estate proprietors, commercial hosts, and certified solar asset owners. Engineered for net-zero autonomy and timeless aesthetics.
+            <p className="text-sm md:text-base lg:text-lg text-white/80 font-light max-w-2xl leading-relaxed mb-6">
+              Curated visibility platform for premier solar panel technologies. Connect directly with asset owner <strong className="text-white font-medium">Udayveer Singh</strong> (Founder, Vittoris) for architectural consultations, commercial rooftop feasibility, and clean power solutions.
             </p>
+          </Reveal>
+
+          {/* Direct Contact Bar in Hero */}
+          <Reveal direction="up" delay={0.55}>
+            <div className="flex flex-wrap items-center justify-center gap-3 mb-8 p-2.5 rounded-full bg-black/60 border border-white/10 backdrop-blur-md text-xs">
+              <a
+                href="tel:+919015920523"
+                className="flex items-center gap-1.5 text-white/90 hover:text-[#D4AF37] px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 font-mono transition-colors"
+                title="Call Owner"
+              >
+                <Phone size={12} className="text-[#D4AF37]" />
+                <span>+91 90159 20523</span>
+              </a>
+              <a
+                href="https://wa.me/919015920523?text=Hi%20Udayveer%2C%20I%20am%20interested%20in%20consulting%20regarding%20solar%20panels."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 text-[#10B981] hover:underline px-3.5 py-1.5 rounded-full bg-[#10B981]/10 border border-[#10B981]/30 font-medium transition-colors"
+              >
+                <span>WhatsApp</span>
+              </a>
+              <a
+                href="mailto:udayveer@vittoris.in"
+                className="flex items-center gap-1.5 text-white/80 hover:text-[#D4AF37] px-3 py-1.5 transition-colors"
+              >
+                <Mail size={12} className="text-[#D4AF37]" />
+                <span>udayveer@vittoris.in</span>
+              </a>
+            </div>
           </Reveal>
 
           <Reveal direction="up" delay={0.6}>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
               <Link to="/projects" className="w-full sm:w-auto">
                 <Button variant="gold" size="lg" fullWidth>
-                  Explore Solar Estates
+                  View Solar Panel Photos
                 </Button>
               </Link>
               <Button
                 variant="outline"
                 size="lg"
-                onClick={() => onOpenConsultation()}
+                onClick={() => onOpenConsultation(ownersData[0])}
                 icon={<Calendar size={15} />}
                 fullWidth
               >
-                Meet Project Owner
+                Consult with Udayveer
               </Button>
             </div>
           </Reveal>
@@ -171,8 +196,8 @@ export const Home: React.FC<HomeProps> = ({ onOpenConsultation }) => {
 
             <Reveal direction="up" delay={0.5}>
               <div className="flex flex-wrap items-center gap-6">
-                <Button variant="outline" onClick={() => onOpenConsultation()}>
-                  Meet Our Lead Engineers
+                <Button variant="outline" onClick={() => onOpenConsultation(ownersData[0])}>
+                  Consult with Udayveer
                 </Button>
                 <div className="h-[1px] w-12 bg-white/20" />
                 <span className="text-xs tracking-widest text-[#D4AF37] uppercase font-semibold">
@@ -252,13 +277,21 @@ export const Home: React.FC<HomeProps> = ({ onOpenConsultation }) => {
                 </div>
               </div>
 
-              <div className="flex items-center gap-4 text-xs shrink-0">
+              <div className="flex flex-wrap items-center justify-center gap-3 text-xs shrink-0">
                 <a
-                  href={`mailto:${ownersData[0].email}`}
-                  className="text-[#D4AF37] hover:underline flex items-center gap-1.5 font-medium bg-[#D4AF37]/10 px-3.5 py-1.5 rounded-full border border-[#D4AF37]/30"
+                  href="tel:+919015920523"
+                  className="flex items-center gap-1.5 font-mono text-[#D4AF37] bg-[#D4AF37]/10 hover:bg-[#D4AF37]/20 px-3.5 py-1.5 rounded-full border border-[#D4AF37]/30 transition-colors font-medium"
+                  title="Direct Phone Line"
+                >
+                  <Phone size={12} />
+                  <span>+91 90159 20523</span>
+                </a>
+                <a
+                  href="mailto:udayveer@vittoris.in"
+                  className="text-white/90 hover:text-[#D4AF37] flex items-center gap-1.5 bg-white/5 hover:bg-white/10 px-3.5 py-1.5 rounded-full border border-white/10 transition-colors"
                 >
                   <Mail size={12} />
-                  <span>{ownersData[0].email}</span>
+                  <span>udayveer@vittoris.in</span>
                 </a>
               </div>
             </div>
@@ -340,18 +373,28 @@ export const Home: React.FC<HomeProps> = ({ onOpenConsultation }) => {
                           <span className="text-[10px] text-[#D4AF37] block font-mono">Founder • Vittoris</span>
                         </div>
                       </div>
-                      <a
-                        href={`mailto:${ownersData[0].email}`}
-                        className="text-[11px] text-[#D4AF37] hover:underline flex items-center gap-1 bg-[#D4AF37]/10 px-2 py-1 rounded border border-[#D4AF37]/20"
-                        title="Direct Founder Email"
-                      >
-                        <Mail size={11} />
-                        <span>Email</span>
-                      </a>
+                      <div className="flex items-center gap-2">
+                        <a
+                          href="tel:+919015920523"
+                          className="text-[11px] text-white/90 hover:text-[#D4AF37] flex items-center gap-1 bg-white/5 px-2 py-1 rounded border border-white/10"
+                          title="Call 9015920523"
+                        >
+                          <Phone size={11} className="text-[#D4AF37]" />
+                          <span>Call</span>
+                        </a>
+                        <a
+                          href={`mailto:${ownersData[0].email}`}
+                          className="text-[11px] text-[#D4AF37] hover:underline flex items-center gap-1 bg-[#D4AF37]/10 px-2 py-1 rounded border border-[#D4AF37]/20"
+                          title="Direct Founder Email"
+                        >
+                          <Mail size={11} />
+                          <span>Email</span>
+                        </a>
+                      </div>
                     </div>
 
                     {/* Footer meeting trigger */}
-                    <div className="pt-2 border-t border-white/10 flex items-center justify-between">
+                    <div className="pt-2 border-t border-white/10 flex items-center gap-2">
                       <Button
                         variant="gold"
                         size="sm"
@@ -361,6 +404,15 @@ export const Home: React.FC<HomeProps> = ({ onOpenConsultation }) => {
                       >
                         Consult on this Panel
                       </Button>
+                      <a
+                        href={`https://wa.me/919015920523?text=${encodeURIComponent(`Hi Udayveer, I am interested in consulting regarding the ${project.title} solar panels.`)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="py-2 px-3 rounded-lg bg-[#10B981]/15 hover:bg-[#10B981]/25 border border-[#10B981]/30 text-[#10B981] font-semibold text-xs transition-colors shrink-0 flex items-center gap-1"
+                        title="WhatsApp Udayveer"
+                      >
+                        <span>WhatsApp</span>
+                      </a>
                     </div>
                   </div>
                 </Card>
@@ -458,6 +510,39 @@ export const Home: React.FC<HomeProps> = ({ onOpenConsultation }) => {
                       </div>
                     </div>
 
+                    {/* Direct Contact Desk Box with Phone & Email */}
+                    <div className="p-4 rounded-xl border bg-black/40 space-y-2.5 text-xs" style={{ borderColor: 'var(--border-card)' }}>
+                      <div className="flex flex-wrap items-center justify-between gap-2">
+                        <span className="text-white/50 uppercase tracking-wider text-[10px] font-semibold">Direct Phone Line</span>
+                        <a
+                          href="tel:+919015920523"
+                          className="font-mono text-sm text-[#D4AF37] font-semibold hover:underline flex items-center gap-1.5"
+                        >
+                          <Phone size={13} />
+                          <span>+91 90159 20523</span>
+                        </a>
+                      </div>
+                      <div className="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-white/5">
+                        <span className="text-white/50 uppercase tracking-wider text-[10px] font-semibold">Official Emails</span>
+                        <div className="flex flex-wrap items-center gap-2.5">
+                          <a
+                            href="mailto:udayveer@vittoris.in"
+                            className="text-white/90 hover:text-[#D4AF37] font-medium flex items-center gap-1"
+                          >
+                            <Mail size={12} className="text-[#D4AF37]" />
+                            <span>udayveer@vittoris.in</span>
+                          </a>
+                          <span className="text-white/20">•</span>
+                          <a
+                            href="mailto:contact@vittoris.in"
+                            className="text-white/60 hover:text-white"
+                          >
+                            contact@vittoris.in
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+
                     {/* Services Tags from Profile */}
                     {ownersData[0].services && (
                       <div>
@@ -478,21 +563,32 @@ export const Home: React.FC<HomeProps> = ({ onOpenConsultation }) => {
                     )}
 
                     {/* Consultation CTAs */}
-                    <div className="pt-2 flex flex-col sm:flex-row items-center gap-4">
+                    <div className="pt-2 flex flex-wrap items-center gap-3">
+                      <a
+                        href="tel:+919015920523"
+                        className="flex-1 min-w-[150px]"
+                      >
+                        <Button variant="gold" size="md" fullWidth icon={<Phone size={14} />}>
+                          Call +91 90159 20523
+                        </Button>
+                      </a>
+                      <a
+                        href="https://wa.me/919015920523?text=Hi%20Udayveer%2C%20I%20would%20like%20to%20consult%20regarding%20solar%20panels."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 min-w-[140px] py-2.5 px-4 rounded-lg bg-[#10B981] hover:bg-[#059669] text-white font-medium text-xs flex items-center justify-center gap-2 transition-colors shadow-lg"
+                      >
+                        <span>WhatsApp Udayveer</span>
+                      </a>
                       <Button
-                        variant="gold"
+                        variant="outline"
                         size="md"
                         onClick={() => onOpenConsultation(ownersData[0])}
-                        icon={<Calendar size={15} />}
-                        fullWidth
+                        icon={<Calendar size={14} />}
+                        className="w-full sm:w-auto"
                       >
-                        Book Direct Consultation with Owner
+                        Schedule Meeting
                       </Button>
-                      <Link to="/projects" className="w-full sm:w-auto">
-                        <Button variant="outline" size="md" fullWidth>
-                          Explore Solar Panels
-                        </Button>
-                      </Link>
                     </div>
                   </div>
                 </div>
@@ -502,102 +598,54 @@ export const Home: React.FC<HomeProps> = ({ onOpenConsultation }) => {
         </div>
       </section>
 
-      {/* 6. INTERACTIVE SOLAR CALCULATOR */}
-      <section className="relative py-24 lg:py-36 px-6 lg:px-16 border-t" style={{ borderColor: 'var(--border-divider)', backgroundColor: 'var(--bg-section-muted)' }}>
-        <div className="max-w-7xl mx-auto">
-          <SolarCalculator onScheduleConsultation={() => onOpenConsultation()} />
-        </div>
-      </section>
-
-      {/* 7. GREEN INFRASTRUCTURE & ENGINEERING PILLARS */}
-      <section className="relative py-24 lg:py-36 px-6 lg:px-16 overflow-hidden">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center max-w-2xl mx-auto mb-20">
-            <Reveal direction="up" delay={0.1}>
-              <div className="text-xs tracking-[0.3em] uppercase text-[#D4AF37] mb-3 font-semibold">
-                ENGINEERING RIGOR
-              </div>
-            </Reveal>
-            <Reveal direction="up" delay={0.2}>
-              <h2 className="text-3xl md:text-5xl font-serif text-white font-normal mb-4">
-                Four Pillars of AI Vittoris Standards.
-              </h2>
-            </Reveal>
-            <Reveal direction="up" delay={0.3}>
-              <p className="text-xs md:text-sm font-light" style={{ color: 'var(--text-muted)' }}>
-                Every solar development featured on our network undergoes uncompromising mechanical, electrical, and aesthetic audits.
-              </p>
-            </Reveal>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                icon: <Sun className="text-[#D4AF37]" size={28} />,
-                title: 'N-Type TOPCon Cells',
-                desc: 'Tier-1 dual-glass bifacial modules achieving up to 23.8% efficiency with minimal annual degradation (<0.4%/year).'
-              },
-              {
-                icon: <Cpu className="text-[#D4AF37]" size={28} />,
-                title: 'Modular BESS Storage',
-                desc: 'Liquid-cooled Lithium Iron Phosphate (LFP) battery banks offering 15-year warranties and sub-second grid islanding.'
-              },
-              {
-                icon: <Zap className="text-[#D4AF37]" size={28} />,
-                title: 'Zero Roof Penetration',
-                desc: 'Custom-engineered aerodynamic ballast framing and standing-seam clamp mechanisms preserving structural roof integrity.'
-              },
-              {
-                icon: <Leaf className="text-[#D4AF37]" size={28} />,
-                title: 'Automated Dry Cleaning',
-                desc: 'Autonomous robotic wipers preserving 99.2% peak output without consuming ground water in arid or dusty seasons.'
-              }
-            ].map((pillar, i) => (
-              <Reveal key={pillar.title} direction="up" delay={0.1 * i}>
-                <Card className="p-8 text-center flex flex-col items-center justify-center h-full">
-                  <div className="w-16 h-16 rounded-full border border-[#D4AF37]/30 bg-[#D4AF37]/5 flex items-center justify-center mb-6">
-                    {pillar.icon}
-                  </div>
-                  <h3 className="text-lg font-serif text-white mb-3 tracking-wide">
-                    {pillar.title}
-                  </h3>
-                  <p className="text-xs font-light leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-                    {pillar.desc}
-                  </p>
-                </Card>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 8. FINAL EDITORIAL CTA BANNER */}
-      <section className="relative py-28 px-6 lg:px-16 text-center border-t border-b overflow-hidden" style={{ borderColor: 'var(--border-divider)', backgroundColor: 'var(--bg-section-muted)' }}>
+      {/* 6. CLEAN DIRECT CONSULTATION & ADVISORY BANNER */}
+      <section className="relative py-24 px-6 lg:px-16 text-center border-t border-b overflow-hidden" style={{ borderColor: 'var(--border-divider)', backgroundColor: 'var(--bg-section-muted)' }}>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#D4AF37]/10 blur-[140px] rounded-full pointer-events-none" />
         <div className="max-w-4xl mx-auto relative z-10">
           <Reveal direction="up" delay={0.1}>
             <span className="text-xs tracking-[0.35em] uppercase text-[#D4AF37] font-semibold block mb-4">
-              COMMENCE YOUR TRANSITION
+              DIRECT OWNER CONSULTATION
             </span>
           </Reveal>
           <Reveal direction="up" delay={0.2}>
-            <h2 className="text-3xl sm:text-5xl md:text-6xl font-serif text-white font-normal mb-8 leading-tight">
-              Ready to meet the owners architecting the next era of solar estates?
+            <h2 className="text-3xl sm:text-5xl font-serif text-white font-normal mb-6 leading-tight">
+              Ready to evaluate solar panels for your estate or commercial property?
             </h2>
           </Reveal>
           <Reveal direction="up" delay={0.3}>
-            <p className="text-sm md:text-base font-light max-w-2xl mx-auto mb-10 leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-              Whether you are an estate owner seeking self-sufficient luxury, a commercial landlord evaluating rooftop leasing revenue, or an EPC firm showcasing capacity.
+            <p className="text-sm md:text-base font-light max-w-2xl mx-auto mb-8 leading-relaxed" style={{ color: 'var(--text-muted)' }}>
+              Direct advisory with Udayveer Singh. Consult on Monocrystalline TOPCon, BIPV architectural glass, bifacial modules, and commercial rooftop solarization.
             </p>
           </Reveal>
+
+          {/* Contact shortcuts */}
+          <Reveal direction="up" delay={0.35}>
+            <div className="flex flex-wrap items-center justify-center gap-4 mb-8">
+              <a
+                href="tel:+919015920523"
+                className="flex items-center gap-2 py-2 px-5 rounded-full bg-black/60 border border-[#D4AF37]/40 text-[#D4AF37] font-mono text-sm font-semibold hover:bg-[#D4AF37]/10 transition-colors"
+              >
+                <Phone size={14} />
+                <span>+91 90159 20523</span>
+              </a>
+              <a
+                href="mailto:udayveer@vittoris.in"
+                className="flex items-center gap-2 py-2 px-5 rounded-full bg-black/60 border border-white/15 text-white hover:text-[#D4AF37] transition-colors text-sm"
+              >
+                <Mail size={14} className="text-[#D4AF37]" />
+                <span>udayveer@vittoris.in</span>
+              </a>
+            </div>
+          </Reveal>
+
           <Reveal direction="up" delay={0.4}>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button variant="gold" size="lg" onClick={() => onOpenConsultation()}>
-                Book Private Feasibility Audit
+              <Button variant="gold" size="lg" onClick={() => onOpenConsultation(ownersData[0])} icon={<Calendar size={15} />}>
+                Book Consultation
               </Button>
-              <Link to="/owners">
+              <Link to="/projects">
                 <Button variant="outline" size="lg">
-                  Browse Owner Profiles
+                  View All Solar Panels
                 </Button>
               </Link>
             </div>

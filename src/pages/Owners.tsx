@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ShieldCheck, Calendar, MapPin, Mail, ArrowUpRight, CheckCircle2 } from 'lucide-react';
+import { ShieldCheck, Calendar, MapPin, Mail, ArrowUpRight, CheckCircle2, Phone } from 'lucide-react';
 import { PageHeader } from '../components/common/PageHeader';
 import { Card } from '../components/common/Card';
 import { Button } from '../components/common/Button';
@@ -111,29 +111,43 @@ export const Owners: React.FC<OwnersProps> = ({ onOpenConsultation }) => {
                   )}
 
                   {/* Action row */}
-                  <div className="pt-2 flex flex-col sm:flex-row items-center gap-4">
-                    <Button
-                      variant="gold"
-                      size="lg"
-                      onClick={() => onOpenConsultation(owner)}
-                      icon={<Calendar size={16} />}
-                      fullWidth
+                  <div className="pt-2 flex flex-wrap items-center gap-3">
+                    <a
+                      href="tel:+919015920523"
+                      className="text-xs px-5 py-3 rounded-xl bg-[#D4AF37] hover:bg-[#c49f27] text-black font-semibold transition-all flex items-center justify-center gap-2 font-mono shadow-lg"
                     >
-                      Book 1-on-1 Consultation with Owner
+                      <Phone size={14} />
+                      <span>Call +91 90159 20523</span>
+                    </a>
+                    <a
+                      href="https://wa.me/919015920523?text=Hi%20Udayveer%2C%20I%20would%20like%20to%20consult%20regarding%20solar%20panels."
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs px-5 py-3 rounded-xl bg-[#10B981] hover:bg-[#059669] text-white font-semibold transition-all flex items-center justify-center gap-2 shadow-lg"
+                    >
+                      <span>WhatsApp Udayveer</span>
+                    </a>
+                    <Button
+                      variant="outline"
+                      size="md"
+                      onClick={() => onOpenConsultation(owner)}
+                      icon={<Calendar size={15} />}
+                    >
+                      Book Calendar Consultation
                     </Button>
                     <a
                       href="mailto:udayveer@vittoris.in"
-                      className="w-full sm:w-auto text-xs px-5 py-3.5 rounded-xl border border-white/20 text-white hover:border-[#D4AF37] hover:text-[#D4AF37] transition-all text-center flex items-center justify-center gap-2"
+                      className="text-xs px-4 py-3 rounded-xl border border-white/20 text-white hover:border-[#D4AF37] hover:text-[#D4AF37] transition-all flex items-center justify-center gap-2"
                     >
-                      <Mail size={14} />
-                      udayveer@vittoris.in
+                      <Mail size={13} className="text-[#D4AF37]" />
+                      <span>udayveer@vittoris.in</span>
                     </a>
                     <a
                       href="mailto:contact@vittoris.in"
-                      className="w-full sm:w-auto text-xs px-5 py-3.5 rounded-xl border border-white/20 text-white hover:border-[#D4AF37] hover:text-[#D4AF37] transition-all text-center flex items-center justify-center gap-2"
+                      className="text-xs px-4 py-3 rounded-xl border border-white/20 text-white/80 hover:border-white hover:text-white transition-all flex items-center justify-center gap-2"
                     >
-                      <Mail size={14} />
-                      contact@vittoris.in
+                      <Mail size={13} />
+                      <span>contact@vittoris.in</span>
                     </a>
                   </div>
                 </div>
